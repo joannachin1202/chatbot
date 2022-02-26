@@ -1,1 +1,1 @@
-sweb: gunicorn views.py
+web: gunicorn linebotFunc1.wsgi
