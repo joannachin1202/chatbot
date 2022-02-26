@@ -1,1 +1,1 @@
-web: gunicorn snow_resort_bot.wsgi
+sweb: gunicorn views.py
