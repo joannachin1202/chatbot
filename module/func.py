@@ -467,7 +467,7 @@ def 提供關鍵詞(event):
 
         
 def subject(array):
-    data = pd.read_excel(r'/Users/ChinJungAn/linechatbot/linebotFunc1拷貝/module/關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
+    data = pd.read_excel('關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
     keyword, deparment, cross_field, second_specialty=data["關鍵字"].tolist(), data["科系"].tolist(), data["跨領域"].tolist(), data["第二專長"].tolist()
     
     data_dict={}
@@ -570,7 +570,7 @@ def arrange_holland(file):
 
   return second_specialty_rows,cross_domain_rows,auxiliary_department_rows,double_major_rows
 
-sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland(r'/Users/ChinJungAn/linechatbot/linebotFunc1拷貝/func1api/Holland .csv')
+sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
   sec_spec = '第二專長：'
