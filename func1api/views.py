@@ -16,7 +16,7 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 
 x=0
 tem=[]
-student_id=list(func.arrange_data(r'/Users/ChinJungAn/linechatbot/linebotFunc1拷貝/func1api/number1.csv'))
+student_id=list(func.arrange_data('number1.csv'))
 
 @csrf_exempt
 def callback(request):
@@ -67,7 +67,7 @@ def callback(request):
                     
                     
                     elif mtext in student_id:
-                        rows = func.arrange_data(r'/Users/ChinJungAn/linechatbot/linebotFunc1拷貝/func1api/number1.csv')
+                        rows = func.arrange_data('number1.csv')
                         
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
