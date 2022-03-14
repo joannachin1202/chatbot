@@ -56,11 +56,12 @@ def callback(request):
                     elif mtext == '先等等':
                         func.先不用(event)
                     elif mtext == '出發囉':
-                        TextSendMessage(  
-            text = "叮咚叮！答對了\n歡迎進入森林～"
-            ), 
+                        
                         func.提供關鍵詞(event)
                         x+=1
+                    
+                    elif mtext == '交集':
+                        func.get_connection(subject_ans,holand_ans)
     
                         
                     
