@@ -38,7 +38,7 @@ def callback(request):
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
                     mtext = event.message.text
-                    if mtext == '嗨': #希望調整成只要輸入任意文字都會回覆
+                    if mtext == '兔子': #希望調整成只要輸入任意文字都會回覆
                         func.begin(event)         
                         
                     #要看 tem 有多長用 len（）
@@ -53,19 +53,18 @@ def callback(request):
                             #清除
                             line_bot_api.reply_message(event.reply_token,TextSendMessage(text=content))     
                     
-                    elif mtext == '想試試':
-                        func.想試試(event)
-                    elif mtext == '先不用':
+                    elif mtext == '先等等':
                         func.先不用(event)
-                    elif mtext == '跨領域學習':
+                    elif mtext == '出發囉':
+                        TextSendMessage(  
+            text = "叮咚叮！答對了\n歡迎進入森林～"
+            ), 
                         func.提供關鍵詞(event)
                         x+=1
     
                         
-                    elif mtext =='與自身所學相關':
-                        func.提供關鍵詞(event)
                     
-                    
+                
                     elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
                         
