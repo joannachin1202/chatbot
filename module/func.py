@@ -558,28 +558,78 @@ def return_course(holland_code):
   cro_dom = '跨領域學分學程：'
   aux_dep = '輔系：'
   dou_maj = '雙主修：'
+  
+  if len(holland_code) > 5:
+    holland_code = holland_code[:5]
+    for key, value in sec_spec_rows.items():
+      value = value.replace(" ","")
+      if value == holland_code:
+        sec_spec = sec_spec + key + ', '
+    if sec_spec ==sec_spec:
+        pass
+    else:
+        sec_spec = sec_spec[:-2]
+    for key, value in cro_dom_rows.items():
+      value = value.replace(" ","")
+      if value == holland_code:
+        cro_dom = cro_dom + key + ', '
+    if cro_dom ==cro_dom:
+        pass
+    else:
+        cro_dom = cro_dom[:-2]
+    for key, value in aux_dep_rows.items():
+      value = value.replace(" ","")
+      if value == holland_code:
+        aux_dep = aux_dep + key + ', '
+    if aux_dep ==aux_dep:
+        pass
+    else:
+        aux_dep = aux_dep[:-2]
+    for key, value in dou_maj_rows.items():
+      value = value.replace(" ","")
+      if value == holland_code:
+        dou_maj = dou_maj + key + ', '
+    if dou_maj ==dou_maj:
+        pass
+    else:
+       dou_maj = dou_maj[:-2]
+    return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+  
   if len(holland_code) == 5:
     for key, value in sec_spec_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    sec_spec = sec_spec[:-2]
+    if sec_spec ==sec_spec:
+        pass
+    else:
+        sec_spec = sec_spec[:-2]
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    cro_dom = cro_dom[:-2]
+    if cro_dom ==cro_dom:
+        pass
+    else:
+        cro_dom = cro_dom[:-2]
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    aux_dep = aux_dep[:-2]
+    if aux_dep ==aux_dep:
+        pass
+    else:
+        aux_dep = aux_dep[:-2]
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    dou_maj = dou_maj[:-2]
+    if dou_maj ==dou_maj:
+        pass
+    else:
+       dou_maj = dou_maj[:-2]
     return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+
   elif len(holland_code) == 3:
     for key, value in sec_spec_rows.items():
       value = value.replace(" ","")
@@ -610,6 +660,7 @@ def return_course(holland_code):
         dou_maj = dou_maj + key + ', '
     dou_maj = dou_maj[:-2]
     return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+
   elif len(holland_code) == 1:
     for key, value in sec_spec_rows.items():
       value = value.replace(" ","")[0]
@@ -632,6 +683,69 @@ def return_course(holland_code):
         dou_maj = dou_maj + key + ', '
     dou_maj = dou_maj[:-2]
     return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+
+def get_connection(subject_ans,holand_ans):
+    pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
+    fina_data_1,final_data_2,final_data_3=[],[],[]
+    # list
+    ke_xi=[]
+    di_er_zhuan_chang=[]
+    kua_ling_yu=[]
+    # 首次处理 split "\n"
+    pre_subject_ans= subject_ans.split("\n")    # 科系,跨領域,第二專長
+    pre_holand_ans= holand_ans.split("\n")      #第二專長, 跨領域學程,輔係,雙組修
+    
+    for i in range(len(pre_subject_ans)):
+        if i==0:
+            ke_xi.append(pre_subject_ans[i])
+        elif i==1:
+            kua_ling_yu.append(pre_subject_ans[i])
+        else:
+            di_er_zhuan_chang.append(pre_subject_ans[i])
+    
+    for i in range(len(pre_holand_ans)):
+        if i==0:
+            di_er_zhuan_chang.append(pre_holand_ans[i])
+        elif i==1:
+            kua_ling_yu.append(pre_holand_ans[i])
+        else:
+            ke_xi.append(pre_holand_ans[i])
+    
+    for item in ke_xi:
+        tem = item.split(":")   # list len 2, take 1
+        pre_data_1.append(tem[1])
+    
+    for item in kua_ling_yu:
+        tem = item.split(":")   # list len 2, take 1
+        pre_data_2.append(tem[1])
+    
+    for item in pre_holand_ans:
+        tem = item.split(":")
+        pre_data_3.append(tem[1])
+        
+    # split and append to final data
+    for item in pre_data_1:
+        split_item = item.split(",")
+        for i in split_item:
+            fina_data_1.append(i)
+    
+    for item in pre_data_2:
+        split_item = item.split(",")
+        for i in split_item:
+            final_data_2.append(i)
+    
+    for item in pre_data_3:
+        split_item = item.split(",")
+        for i in split_item:
+            final_data_3.append(i)
+
+    # no repeat
+    x= ",".join(list(set(fina_data_1)))
+    y= ",".join(list(set(final_data_2)))
+    z= ",".join(list(set(final_data_3)))
+    
+    text= x+"\n"+y+"\n"+z
+    return text
 
 
 
