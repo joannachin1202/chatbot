@@ -445,12 +445,6 @@ def 提供關鍵詞(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def 判斷中(event): 
-    try:
-        message = TextSendMessage(text='yum yum～待我細細回想這滋味...') 
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
         
 def subject(array):
@@ -521,9 +515,8 @@ def subject(array):
         pass
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
-     
-   return  text 
-  
+    
+    return text
 
 
 def arrange_data(file):
@@ -766,5 +759,4 @@ def get_connection(subject_ans,holand_ans):
 
     
        
-
 
