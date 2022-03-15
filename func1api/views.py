@@ -46,6 +46,7 @@ def callback(request):
                     elif x==1:
                         tem.append(mtext)
                         if len(tem)==3:
+                            func.判斷中(event)
                             content=func.subject(tem)
                             x-=1
                             tem=[]
