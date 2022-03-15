@@ -517,7 +517,9 @@ def subject(array):
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
      
-    return [message,text]
+   return [TextSendMessage(  
+            text = "yum yum～待我細細回想這滋味..."
+            ), text ] 
   
 
 
