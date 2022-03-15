@@ -46,7 +46,7 @@ def callback(request):
                     elif x==1:
                         tem.append(mtext)
                         if len(tem)==3:
-                            
+                            message.append(TextSendMessage(text='yum yum～待我細細回想這滋味...'))
                             content=func.subject(tem)
                             x-=1
                             tem=[]
