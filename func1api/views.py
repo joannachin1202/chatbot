@@ -47,7 +47,7 @@ def callback(request):
                         tem.append(mtext)
                         if len(tem)==3:
                             
-                            content=[func.判斷中(event),func.subject(tem)]
+                            content=func.subject(tem)
                             x-=1
                             tem=[]
                             #清除
