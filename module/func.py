@@ -485,6 +485,7 @@ def subject(array):
     # elimate repeated text
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
+    message = TextSendMessage(text='yum yum～待我細細回想這滋味...') 
     text_1="雙輔系灌木叢："
     text_2="跨域學程洞穴： "
     text_3="第二專長小溪："
@@ -515,9 +516,7 @@ def subject(array):
         pass
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
-    
-    message = TextSendMessage(text='yum yum～待我細細回想這滋味...') 
-    
+     
     return [message,text]
   
 
