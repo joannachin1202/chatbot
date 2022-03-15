@@ -516,7 +516,10 @@ def subject(array):
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
-    return text
+    message = TextSendMessage(text='yum yum～待我細細回想這滋味...') 
+    
+    return [message,text]
+  
 
 
 def arrange_data(file):
