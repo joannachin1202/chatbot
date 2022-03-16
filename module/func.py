@@ -557,10 +557,10 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec = '第二專長小溪：'
-  cro_dom = '跨域學程洞穴：'
+  sec_spec = '第二專長：'
+  cro_dom = '跨領域學分學程：'
   aux_dep = '輔系：'
-  dou_maj = '雙輔系灌木叢：'
+  dou_maj = '雙主修：'
   
   if len(holland_code) > 5:
     holland_code = holland_code[:5]
@@ -631,7 +631,38 @@ def return_course(holland_code):
         pass
     else:
        dou_maj = dou_maj[:-2]
-    return sec_spec + '\n' + cro_dom + '\n' + dou_maj
+    return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+
+  elif len(holland_code) == 3:
+    for key, value in sec_spec_rows.items():
+      value = value.replace(" ","")
+      if len(value) > 3:
+        value = value[:-2]
+      if value == holland_code:
+        sec_spec = sec_spec + key + ', '
+    sec_spec = sec_spec[:-2]
+    for key, value in cro_dom_rows.items():
+      value = value.replace(" ","")
+      if len(value) > 3:
+        value = value[:-2]
+      if value == holland_code:
+        cro_dom = cro_dom + key + ', '
+    cro_dom = cro_dom[:-2]
+    for key, value in aux_dep_rows.items():
+      value = value.replace(" ","")
+      if len(value) > 3:
+        value = value[:-2]
+      if value == holland_code:
+        aux_dep = aux_dep + key + ', '
+    aux_dep = aux_dep[:-2]
+    for key, value in dou_maj_rows.items():
+      value = value.replace(" ","")
+      if len(value) > 3:
+        value = value[:-2]
+      if value == holland_code:
+        dou_maj = dou_maj + key + ', '
+    dou_maj = dou_maj[:-2]
+    return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
 
 def get_connection(subject_ans,holand_ans):
     pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
