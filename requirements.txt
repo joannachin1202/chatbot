@@ -15,3 +15,4 @@ pyimgur
 mpl_finance
 arrow
 openpyxl==3.0.9
+iteration-utilities
