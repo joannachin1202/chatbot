@@ -664,6 +664,29 @@ def return_course(holland_code):
     dou_maj = dou_maj[:-2]
     return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
 
+  elif len(holland_code) == 1:
+    for key, value in sec_spec_rows.items():
+      value = value.replace(" ","")[0]
+      if value == holland_code:
+        sec_spec = sec_spec + key + ', '
+    sec_spec = sec_spec[:-2]
+    for key, value in cro_dom_rows.items():
+      value = value.replace(" ","")[0]
+      if value == holland_code:
+        cro_dom = cro_dom + key + ', '
+    cro_dom = cro_dom[:-2]
+    for key, value in aux_dep_rows.items():
+      value = value.replace(" ","")[0]
+      if value == holland_code:
+        aux_dep = aux_dep + key + ', '
+    aux_dep = aux_dep[:-2]
+    for key, value in dou_maj_rows.items():
+      value = value.replace(" ","")[0]
+      if value == holland_code:
+        dou_maj = dou_maj + key + ', '
+    dou_maj = dou_maj[:-2]
+    return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+
 def get_connection(subject_ans,holand_ans):
     pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
     fina_data_1,final_data_2,final_data_3=[],[],[]
