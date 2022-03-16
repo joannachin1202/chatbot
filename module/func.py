@@ -598,7 +598,7 @@ def return_course(holland_code):
         pass
     else:
        dou_maj = dou_maj[:-2]
-    return sec_spec + '\n' + cro_dom  + '\n' + dou_maj
+    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
   
   if len(holland_code) == 5:
     for key, value in sec_spec_rows.items():
@@ -633,7 +633,7 @@ def return_course(holland_code):
         pass
     else:
        dou_maj = dou_maj[:-2]
-    return sec_spec + '\n' + cro_dom + '\n' + dou_maj
+    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
 
   elif len(holland_code) == 3:
     for key, value in sec_spec_rows.items():
@@ -664,7 +664,7 @@ def return_course(holland_code):
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
     dou_maj = dou_maj[:-2]
-    return sec_spec + '\n' + cro_dom + '\n' + dou_maj
+    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
 
   elif len(holland_code) == 1:
     for key, value in sec_spec_rows.items():
@@ -687,7 +687,7 @@ def return_course(holland_code):
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
     dou_maj = dou_maj[:-2]
-    return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
 
