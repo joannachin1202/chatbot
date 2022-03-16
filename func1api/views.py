@@ -60,6 +60,11 @@ def callback(request):
                         func.提供關鍵詞(event)
                         x+=1
                     
+                    elif mtext == '回跨域紅蘿蔔':
+                        
+                        func.提供關鍵詞(event)
+                        x+=1
+                    
                     elif mtext == '交集':
                         func.get_connection(subject_ans,holand_ans)
     
