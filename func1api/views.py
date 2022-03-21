@@ -17,11 +17,14 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 x=0
 tem=[]
 student_id=list(func.arrange_data('number1.csv'))
+subject_ans = subject(array)
+holand_ans = return_course(holland_code)
 
 @csrf_exempt
 def callback(request):
     global x
     global tem
+    
     
     if request.method == 'POST':
         message=[]
