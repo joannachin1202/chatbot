@@ -690,6 +690,10 @@ def return_course(holland_code):
     return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
+  
+  subject_ans = subject(array)
+  holand_ans = return_course(holland_code)
+  
 
   subject_ans = subject_ans.replace(' ','').replace('：',':')
   holand_ans = holand_ans.replace(' ','').replace('：',':')
