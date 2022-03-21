@@ -18,7 +18,7 @@ x=0
 tem=[]
 student_id=list(func.arrange_data('number1.csv'))
 subject_ans = func.subject(tem)
-holand_ans = func.return_course(func.get_quiz_results)
+holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
 
 @csrf_exempt
 def callback(request):
