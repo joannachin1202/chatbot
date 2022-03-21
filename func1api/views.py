@@ -67,22 +67,24 @@ def callback(request):
                         
                         func.提供關鍵詞(event)
                         x+=1
-                    
-                    elif mtext == '交集':
-                        subject_ans = func.subject(tem)
                         
-                        holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
-                        func.get_connection(subject_ans,holand_ans)
-    
-                        
-                    
-                
-                    elif mtext in student_id:
+                     elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
                         
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
                         
+                    
+                    elif mtext == '交集':
+                        subject_ans = func.subject(tem)
+                        
+                        holand_ans = func.return_course(holand)
+                        func.get_connection(subject_ans,holand_ans)
+    
+                        
+                    
+                
+                   
                         
                   
             
