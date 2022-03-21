@@ -16,6 +16,7 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 
 x=0
 tem=[]
+mtext=[]
 student_id=list(func.arrange_data('number1.csv'))
 subject_ans = func.subject(tem)
 holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
