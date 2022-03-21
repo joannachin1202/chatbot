@@ -16,10 +16,7 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 
 x=0
 tem=[]
-mtext=[]
 student_id=list(func.arrange_data('number1.csv'))
-subject_ans = func.subject(tem)
-holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
 
 @csrf_exempt
 def callback(request):
@@ -71,6 +68,9 @@ def callback(request):
                         x+=1
                     
                     elif mtext == '交集':
+                        subject_ans = func.subject(tem)
+                        
+                        holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
                         func.get_connection(subject_ans,holand_ans)
     
                         
