@@ -24,6 +24,7 @@ holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
 def callback(request):
     global x
     global tem
+    global text
     
     
     if request.method == 'POST':
