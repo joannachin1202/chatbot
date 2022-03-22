@@ -17,13 +17,12 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 x=0
 tem=[]
 student_id=list(func.arrange_data('number1.csv'))
-rows = func.arrange_data('number1.csv')
 
 @csrf_exempt
 def callback(request):
     global x
     global tem
-    global rows
+    global text
     
     
     if request.method == 'POST':
@@ -65,25 +64,24 @@ def callback(request):
                     
                     elif mtext == '回跨域紅蘿蔔':
                         
-                         func.提供關鍵詞(event)
-                         x+=1
-                        
-                     elif mtext in student_id:
-                        rows = func.arrange_data('number1.csv')
-                        holand=func.return_course(func.get_quiz_results(mtext,rows))
-                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
-                        
+                        func.提供關鍵詞(event)
+                        x+=1
                     
                     elif mtext == '交集':
                         subject_ans = func.subject(tem)
                         
-                        holand_ans = func.return_course(holand)
+                        holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
                         func.get_connection(subject_ans,holand_ans)
     
                         
                     
                 
-                   
+                    elif mtext in student_id:
+                        rows = func.arrange_data('number1.csv')
+                        
+                        holand=func.return_course(func.get_quiz_results(mtext,rows))
+                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
+                        
                         
                   
             
