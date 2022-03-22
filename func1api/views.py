@@ -65,14 +65,14 @@ def callback(request):
                     
                     elif mtext == '回跨域紅蘿蔔':
                         
-                        func.提供關鍵詞(event)
-                        x+=1
+                         func.提供關鍵詞(event)
+                         x+=1
                         
                      elif mtext in student_id:
-                        rows = func.arrange_data('number1.csv')
+                          rows = func.arrange_data('number1.csv')
                         
-                        holand=func.return_course(func.get_quiz_results(mtext,rows))
-                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
+                          holand=func.return_course(func.get_quiz_results(mtext,rows))
+                          line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
                         
                     
                     elif mtext == '交集':
