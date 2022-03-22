@@ -23,6 +23,7 @@ def callback(request):
     global x
     global tem
     global text
+    global rows
     
     
     if request.method == 'POST':
