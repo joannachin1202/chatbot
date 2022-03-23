@@ -449,7 +449,7 @@ def 提供關鍵詞(event):
 
 
         
-def subject(array):
+def subject(event):
     data = pd.read_excel('關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
     keyword, deparment, cross_field, second_specialty=data["關鍵字"].tolist(), data["科系"].tolist(), data["跨領域"].tolist(), data["第二專長"].tolist()
     
