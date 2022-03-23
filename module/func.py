@@ -7,8 +7,6 @@ from linebot.models import TextSendMessage
 
 from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
 from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction
-from iteration_utilities import duplicates
-from iteration_utilities import unique_everseen
 import os
 import pandas as pd
 import csv
@@ -488,7 +486,7 @@ def subject(array):
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
     text_1="雙輔系灌木叢："
-    text_2="跨域學程洞穴："
+    text_2="跨域學程洞穴： "
     text_3="第二專長小溪："
 
     for i in range(len(derpar)):
@@ -519,7 +517,8 @@ def subject(array):
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
-        
+
+
 def arrange_data(file):
   rows = {}
   with open(file, "r", encoding="utf-8") as fp:
@@ -558,184 +557,284 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec = '第二專長小溪：'
-  cro_dom = '跨域學程洞穴：'
+  sec_spec = '第二專長：'
+  cro_dom = '跨領域學分學程：'
   aux_dep = '輔系：'
-  dou_maj = '雙輔系灌木叢：'
-  
-  if len(holland_code) > 5:
-    holland_code = holland_code[:5]
-    for key, value in sec_spec_rows.items():
-      value = value.replace(" ","")
-      if value == holland_code:
-        sec_spec = sec_spec + key + ', '
-    if sec_spec ==sec_spec:
-        pass
-    else:
-        sec_spec = sec_spec[:-2]
-    for key, value in cro_dom_rows.items():
-      value = value.replace(" ","")
-      if value == holland_code:
-        cro_dom = cro_dom + key + ', '
-    if cro_dom ==cro_dom:
-        pass
-    else:
-        cro_dom = cro_dom[:-2]
-    for key, value in aux_dep_rows.items():
-      value = value.replace(" ","")
-      if value == holland_code:
-        aux_dep = aux_dep + key + ', '
-    if aux_dep ==aux_dep:
-        pass
-    else:
-        aux_dep = aux_dep[:-2]
-    for key, value in dou_maj_rows.items():
-      value = value.replace(" ","")
-      if value == holland_code:
-        dou_maj = dou_maj + key + ', '
-    if dou_maj ==dou_maj:
-        pass
-    else:
-       dou_maj = dou_maj[:-2]
-    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
+  dou_maj = '雙主修：'
   
   if len(holland_code) == 5:
+    # 第二專長
     for key, value in sec_spec_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if sec_spec ==sec_spec:
-        pass
+    if len(sec_spec) > 5:
+      sec_spec = sec_spec[:-2]
     else:
+      for key, value in sec_spec_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:3]) == 0:
+          sec_spec = sec_spec + key + ', '
+      if len(sec_spec) > 5:
         sec_spec = sec_spec[:-2]
+      else:
+        for key, value in sec_spec_rows.items():
+          value = value.replace(" ","")
+          if value.find(holland_code[:1]) == 0:
+            sec_spec = sec_spec + key + ', '
+        if len(sec_spec) > 5:
+          sec_spec = sec_spec[:-2]
+    # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if cro_dom ==cro_dom:
-        pass
+    if len(cro_dom) > 8:
+      cro_dom = cro_dom[:-2]
     else:
+      for key, value in cro_dom_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:3]) == 0:
+          cro_dom = cro_dom + key + ', '
+      if len(cro_dom) > 8:
         cro_dom = cro_dom[:-2]
+      else:
+        for key, value in cro_dom_rows.items():
+          value = value.replace(" ","")
+          if value.find(holland_code[:1]) == 0:
+            cro_dom = cro_dom + key + ', '
+        if len(cro_dom) > 8:
+          cro_dom = cro_dom[:-2]
+    # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    if aux_dep ==aux_dep:
-        pass
+    if len(aux_dep) > 3:
+      aux_dep = aux_dep[:-2]
     else:
+      for key, value in aux_dep_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:3]) == 0:
+          aux_dep = aux_dep + key + ', '
+      if len(aux_dep) > 3:
         aux_dep = aux_dep[:-2]
+      else:
+        for key, value in aux_dep_rows.items():
+          value = value.replace(" ","")
+          if value.find(holland_code[:1]) == 0:
+            aux_dep = aux_dep + key + ', '
+        if len(aux_dep) > 3:
+          aux_dep = aux_dep[:-2]
+    # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if dou_maj ==dou_maj:
-        pass
+    if len(dou_maj) > 4:
+      dou_maj = dou_maj[:-2]
     else:
-       dou_maj = dou_maj[:-2]
-    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
-
-  elif len(holland_code) == 3:
+      for key, value in dou_maj_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:3]) == 0:
+          dou_maj = dou_maj + key + ', '
+      if len(dou_maj) > 4:
+        dou_maj = dou_maj[:-2]
+      else:
+        for key, value in dou_maj_rows.items():
+          value = value.replace(" ","")
+          if value.find(holland_code[:1]) == 0:
+            dou_maj = dou_maj + key + ', '
+        if len(dou_maj) > 4:
+          dou_maj = dou_maj[:-2]
+  if len(holland_code) == 3:
+    # 第二專長
     for key, value in sec_spec_rows.items():
       value = value.replace(" ","")
-      if len(value) > 3:
-        value = value[:-2]
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    sec_spec = sec_spec[:-2]
+    if len(sec_spec) > 5:
+      sec_spec = sec_spec[:-2]
+    else:
+      for key, value in sec_spec_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          sec_spec = sec_spec + key + ', '
+      if len(sec_spec) > 5:
+        sec_spec = sec_spec[:-2]
+    # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
-      if len(value) > 3:
-        value = value[:-2]
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    cro_dom = cro_dom[:-2]
+    if len(cro_dom) > 8:
+      cro_dom = cro_dom[:-2]
+    else:
+      for key, value in cro_dom_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          cro_dom = cro_dom + key + ', '
+      if len(cro_dom) > 8:
+        cro_dom = cro_dom[:-2]
+    # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
-      if len(value) > 3:
-        value = value[:-2]
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    aux_dep = aux_dep[:-2]
+    if len(aux_dep) > 3:
+      aux_dep = aux_dep[:-2]
+    else:
+      for key, value in aux_dep_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          aux_dep = aux_dep + key + ', '
+      if len(aux_dep) > 3:
+        aux_dep = aux_dep[:-2]
+    # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
-      if len(value) > 3:
-        value = value[:-2]
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    dou_maj = dou_maj[:-2]
-    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
-
-  elif len(holland_code) == 1:
+    if len(dou_maj) > 4:
+      dou_maj = dou_maj[:-2]
+    else:
+      for key, value in dou_maj_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          dou_maj = dou_maj + key + ', '
+      if len(dou_maj) > 4:
+        dou_maj = dou_maj[:-2]
+  if len(holland_code) == 1:
+    # 第二專長
     for key, value in sec_spec_rows.items():
-      value = value.replace(" ","")[0]
+      value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    sec_spec = sec_spec[:-2]
+    if len(sec_spec) > 5:
+      sec_spec = sec_spec[:-2]
+    else:
+      for key, value in sec_spec_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          sec_spec = sec_spec + key + ', '
+      if len(sec_spec) > 5:
+        sec_spec = sec_spec[:-2]
+    # 跨領域學分學程
     for key, value in cro_dom_rows.items():
-      value = value.replace(" ","")[0]
+      value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    cro_dom = cro_dom[:-2]
+    if len(cro_dom) > 8:
+      cro_dom = cro_dom[:-2]
+    else:
+      for key, value in cro_dom_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          cro_dom = cro_dom + key + ', '
+      if len(cro_dom) > 8:
+        cro_dom = cro_dom[:-2]
+    # 輔系
     for key, value in aux_dep_rows.items():
-      value = value.replace(" ","")[0]
+      value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    aux_dep = aux_dep[:-2]
+    if len(aux_dep) > 3:
+      aux_dep = aux_dep[:-2]
+    else:
+      for key, value in aux_dep_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          aux_dep = aux_dep + key + ', '
+      if len(aux_dep) > 3:
+        aux_dep = aux_dep[:-2]
+    # 雙主修
     for key, value in dou_maj_rows.items():
-      value = value.replace(" ","")[0]
+      value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    dou_maj = dou_maj[:-2]
-    return dou_maj + '\n' + cro_dom  + '\n' + sec_spec
+    if len(dou_maj) > 4:
+      dou_maj = dou_maj[:-2]
+    else:
+      for key, value in dou_maj_rows.items():
+        value = value.replace(" ","")
+        if value.find(holland_code[:1]) == 0:
+          dou_maj = dou_maj + key + ', '
+      if len(dou_maj) > 4:
+        dou_maj = dou_maj[:-2]
+  return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
 
 def get_connection(subject_ans,holand_ans):
-  
-  subject_ans = subject_ans.replace(' ','').replace('：',':')
-  holand_ans = holand_ans.replace(' ','').replace('：',':')
+    pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
+    fina_data_1,final_data_2,final_data_3=[],[],[]
+    # list
+    ke_xi=[]
+    di_er_zhuan_chang=[]
+    kua_ling_yu=[]
+    # 首次处理 split "\n"
+    pre_subject_ans= subject_ans.split("\n")    # 科系,跨領域,第二專長
+    pre_holand_ans= holand_ans.split("\n")      #第二專長, 跨領域學程,輔係,雙組修
+    
+    for i in range(len(pre_subject_ans)):
+        if i==0:
+            ke_xi.append(pre_subject_ans[i])
+        elif i==1:
+            kua_ling_yu.append(pre_subject_ans[i])
+        else:
+            di_er_zhuan_chang.append(pre_subject_ans[i])
+    
+    for i in range(len(pre_holand_ans)):
+        if i==0:
+            di_er_zhuan_chang.append(pre_holand_ans[i])
+        elif i==1:
+            kua_ling_yu.append(pre_holand_ans[i])
+        else:
+            ke_xi.append(pre_holand_ans[i])
+    
+    for item in ke_xi:
+        tem = item.split(":")   # list len 2, take 1
+        pre_data_1.append(tem[1])
+    
+    for item in kua_ling_yu:
+        tem = item.split(":")   # list len 2, take 1
+        pre_data_2.append(tem[1])
+    
+    for item in pre_holand_ans:
+        tem = item.split(":")
+        pre_data_3.append(tem[1])
+        
+    # split and append to final data
+    for item in pre_data_1:
+        split_item = item.split(",")
+        for i in split_item:
+            fina_data_1.append(i)
+    
+    for item in pre_data_2:
+        split_item = item.split(",")
+        for i in split_item:
+            final_data_2.append(i)
+    
+    for item in pre_data_3:
+        split_item = item.split(",")
+        for i in split_item:
+            final_data_3.append(i)
 
-  pre_subject_ans= subject_ans.split('\n')
-  pre_holand_ans= holand_ans.split('\n')
+    # no repeat
+    x= ",".join(list(set(fina_data_1)))
+    y= ",".join(list(set(final_data_2)))
+    z= ",".join(list(set(final_data_3)))
+    
+    text= x+"\n"+y+"\n"+z
+    return text
 
-  # 雙輔系灌木叢
-  aux_dep = []
-  # 第二專長小溪
-  sec_spec = []
-  # 跨域學程洞穴
-  cro_dom = []
 
-  for item in pre_subject_ans:
-    if '雙輔系灌木叢' in item:
-      for i in item[7:].split(','):
-        aux_dep.append(i)
-    elif '第二專長小溪' in item:
-      for i in item[7:].split(','):
-        sec_spec.append(i)
-    elif '跨域學程洞穴' in item:
-      for i in item[7:].split(','):
-        cro_dom.append(i)
-  for item in pre_holand_ans:
-    if '雙輔系灌木叢' in item:
-      for i in item[7:].split(','):
-        aux_dep.append(i)
-    elif '第二專長小溪' in item:
-      for i in item[7:].split(','):
-        sec_spec.append(i)
-    elif '跨域學程洞穴' in item:
-      for i in item[7:].split(','):
-        cro_dom.append(i)
 
-  aux_dep = [i for i in aux_dep if i != '']
-  sec_spec = [i for i in sec_spec if i != '']
-  cro_dom = [i for i in cro_dom if i != '']
+
+
+
+
+      
  
-  aux = '雙輔系灌木叢：'
-  sec = '第二專長小溪：'
-  cro = '跨域學程洞穴：'
-  if list(unique_everseen(duplicates(aux_dep))) != []:
-    aux += list(unique_everseen(duplicates(aux_dep)))[0]
-  if list(unique_everseen(duplicates(sec_spec))) != []:
-    sec += list(unique_everseen(duplicates(sec_spec)))[0]
-  if list(unique_everseen(duplicates(cro_dom))) != []:
-    cro += list(unique_everseen(duplicates(cro_dom)))[0]
+  
 
-  return aux + '\n' + sec + '\n' + cro
+    
+       
