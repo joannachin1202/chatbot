@@ -518,7 +518,14 @@ def subject(array):
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
-    return text
+    message = [  #串列
+            TextSendMessage(  
+            text = text
+            ),
+            TextSendMessage(  
+            text = "小圖作為森林的嚮導，將竭盡所能地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你胃口的跨域蘿蔔坑！"
+            )
+          ]
 
 
 def arrange_data(file):
