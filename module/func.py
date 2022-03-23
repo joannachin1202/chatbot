@@ -449,7 +449,7 @@ def 提供關鍵詞(event):
 
 
         
-def subject(event):
+def subject(array):
     data = pd.read_excel('關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
     keyword, deparment, cross_field, second_specialty=data["關鍵字"].tolist(), data["科系"].tolist(), data["跨領域"].tolist(), data["第二專長"].tolist()
     
@@ -541,9 +541,9 @@ def subject(event):
             )
           )
         ]
-        line_bot_api.reply_message(event.reply_token,message)
+        line_bot_api.reply_message(array.reply_token,message)
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        line_bot_api.reply_message(array.reply_token,TextSendMessage(text='發生錯誤！'))
 
 
 def arrange_data(file):
