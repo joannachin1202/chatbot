@@ -22,9 +22,6 @@ student_id=list(func.arrange_data('number1.csv'))
 def callback(request):
     global x
     global tem
-    global text
-    global rows
-    
     
     if request.method == 'POST':
         message=[]
@@ -69,9 +66,6 @@ def callback(request):
                         x+=1
                     
                     elif mtext == '交集':
-                        subject_ans = func.subject(tem)
-                        
-                        holand_ans = func.return_course(func.get_quiz_results(mtext,rows))
                         func.get_connection(subject_ans,holand_ans)
     
                         
