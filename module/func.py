@@ -518,30 +518,9 @@ def subject(array):
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
-    try:
-        message = [  #串列
-            TextSendMessage(  
-            text = text
-            ), 
-           TemplateSendMessage(
-            alt_text='準備好一起探索這座森林了嗎？',
-            template=ConfirmTemplate(
-                text='準備好一起探索這座森林了嗎？',  #主標題
-                actions=[    
-                   MessageTemplateAction(  
-                         label='出發囉', #按鈕文字
-                         text='出發囉' #顯示文字計息  
-                   ),
-                    MessageTemplateAction(  #顯示文字計息
-                        label='先等等',
-                        text='先等等'
-                        )
-                     
-                 ]
-             )
-           )
-         ]
-        
+    return text
+
+
 def arrange_data(file):
   rows = {}
   with open(file, "r", encoding="utf-8") as fp:
