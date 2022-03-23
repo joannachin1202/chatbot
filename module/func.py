@@ -518,6 +518,7 @@ def subject(array):
     
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
+    try:
     message = [  #串列
             TextSendMessage(  
             text = text
