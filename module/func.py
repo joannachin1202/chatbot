@@ -519,8 +519,7 @@ def subject(array):
     text = text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
-
-
+        
 def arrange_data(file):
   rows = {}
   with open(file, "r", encoding="utf-8") as fp:
