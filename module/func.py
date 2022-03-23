@@ -526,6 +526,9 @@ def subject(array):
             text = "小圖作為森林的嚮導，將竭盡所能地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你胃口的跨域蘿蔔坑！"
             )
           ]
+    line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
 
 def arrange_data(file):
