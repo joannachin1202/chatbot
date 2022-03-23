@@ -486,7 +486,7 @@ def subject(array):
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
     text_1="雙輔系灌木叢："
-    text_2="跨域學程洞穴： "
+    text_2="跨域學程洞穴："
     text_3="第二專長小溪："
 
     for i in range(len(derpar)):
@@ -557,10 +557,10 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec = '第二專長：'
-  cro_dom = '跨領域學分學程：'
+  sec_spec ="第二專長小溪："
+  cro_dom ="跨域學程洞穴："
   aux_dep = '輔系：'
-  dou_maj = '雙主修：'
+  dou_maj ="雙輔系灌木叢："
   
   if len(holland_code) == 5:
     # 第二專長
@@ -761,7 +761,7 @@ def return_course(holland_code):
           dou_maj = dou_maj + key + ', '
       if len(dou_maj) > 4:
         dou_maj = dou_maj[:-2]
-  return sec_spec + '\n' + cro_dom + '\n' + aux_dep + '\n' + dou_maj
+  return dou_maj + '\n' + cro_dom + '\n' + sec_spec 
 
 def get_connection(subject_ans,holand_ans):
     pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
