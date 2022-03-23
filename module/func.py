@@ -762,7 +762,7 @@ def return_course(holland_code):
       if len(dou_maj) > 4:
         dou_maj = dou_maj[:-2]
         
-  return dou_maj+ '\n'+ cro_dom + '\n'sec_spec
+  return dou_maj+ '\n'+ cro_dom + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
     pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
