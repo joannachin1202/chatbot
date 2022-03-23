@@ -537,13 +537,11 @@ def subject(array):
                         text='先等等'
                         )
                      
-                ]
-            )
-          )
-        ]
+                 ]
+             )
+           )
+         ]
         
-
-
 def arrange_data(file):
   rows = {}
   with open(file, "r", encoding="utf-8") as fp:
