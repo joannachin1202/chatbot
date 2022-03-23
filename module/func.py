@@ -541,9 +541,7 @@ def subject(array):
             )
           )
         ]
-        line_bot_api.reply_message(array.reply_token,message)
-    except:
-        line_bot_api.reply_message(array.reply_token,TextSendMessage(text='發生錯誤！'))
+        
 
 
 def arrange_data(file):
