@@ -448,6 +448,7 @@ def 提供關鍵詞(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
 
+
         
 def subject(array):
     data = pd.read_excel('關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
@@ -487,9 +488,9 @@ def subject(array):
     # elimate repeated text
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
-    text_1="雙輔系灌木叢："
-    text_2="跨域學程洞穴： "
-    text_3="第二專長小溪："
+    text_1="雙輔系灌木叢🌳："
+    text_2="跨域學程洞穴🛕： "
+    text_3="第二專長小溪🏞："
 
     for i in range(len(derpar)):
         if i==0:
@@ -516,9 +517,42 @@ def subject(array):
     else:
         pass
     
-    text = text_1 +"\n"+ text_2 +"\n"+text_3
+    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
+    
+def 關鍵字結果(event): 
+    try:
+        message = [  #串列
+            TextSendMessage(  
+            text = "叮咚叮！答對了\n歡迎進入森林～"
+            ), 
+            TextSendMessage(  
+            text = "小圖作為森林的嚮導，將竭盡所能地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你胃口的跨域蘿蔔坑！"
+            ), 
+           TemplateSendMessage(
+            alt_text='準備好一起探索這座森林了嗎？',
+            template=ConfirmTemplate(
+                text='準備好一起探索這座森林了嗎？',  #主標題
+                actions=[    
+                   MessageTemplateAction(  
+                         label='出發囉', #按鈕文字
+                         text='出發囉' #顯示文字計息  
+                   ),
+                    MessageTemplateAction(  #顯示文字計息
+                        label='先等等',
+                        text='先等等'
+                        )
+                     
+                ]
+            )
+          )
+        ]
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
+
 
 
 def arrange_data(file):
@@ -814,7 +848,7 @@ def get_connection(subject_ans,holand_ans):
     if list(unique_everseen(duplicates(cro_dom))) != []:
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
 
-    return aux + '\n' + sec + '\n' + cro
+    return '有了你存放的職涯興趣測驗果實的幫助，以下幾個地方最有可能長出符合你胃口和興趣測驗結果的跨領域紅蘿蔔，他們分佈在下面這些地方：' + '\n'+ aux + '\n' + sec + '\n' + cro
 
 
 
