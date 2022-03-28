@@ -74,7 +74,7 @@ def callback(request):
                         rows = func.arrange_data('number1.csv') 
                         
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
-                        func.get_connection(subject_ans,holand_ans)
+                        content=func.get_connection(subject_ans,holand_ans)
     
                 
                     elif mtext in student_id:
