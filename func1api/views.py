@@ -25,6 +25,7 @@ def callback(request):
     global text
     global rows
     global text_intersection
+    global stu_id_intersection
     
     if request.method == 'POST':
         message=[]
