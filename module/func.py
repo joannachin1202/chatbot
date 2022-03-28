@@ -557,10 +557,10 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec = '第二專長小溪：'
-  cro_dom = '跨領域學程洞穴：'
+  sec_spec ="第二專長小溪："
+  cro_dom ="跨域學程洞穴： "
   aux_dep = '輔系：'
-  dou_maj = '雙輔系灌木叢：'
+  dou_maj ="雙輔系灌木叢："
   
   if len(holland_code) == 5:
     # 第二專長
@@ -764,68 +764,55 @@ def return_course(holland_code):
   return sec_spec + '\n' + cro_dom + '\n' + dou_maj
 
 def get_connection(subject_ans,holand_ans):
-    pre_data_1,pre_data_2,pre_data_3=[],[],[]   #科系,跨領域,第二專長
-    fina_data_1,final_data_2,final_data_3=[],[],[]
-    # list
-    ke_xi=[]
-    di_er_zhuan_chang=[]
-    kua_ling_yu=[]
-    # 首次处理 split "\n"
-    pre_subject_ans= subject_ans.split("\n")    # 科系,跨領域,第二專長
-    pre_holand_ans= holand_ans.split("\n")      #第二專長, 跨領域學程,輔係,雙組修
-    
-    for i in range(len(pre_subject_ans)):
-        if i==0:
-            ke_xi.append(pre_subject_ans[i])
-        elif i==1:
-            kua_ling_yu.append(pre_subject_ans[i])
-        else:
-            di_er_zhuan_chang.append(pre_subject_ans[i])
-    
-    for i in range(len(pre_holand_ans)):
-        if i==0:
-            di_er_zhuan_chang.append(pre_holand_ans[i])
-        elif i==1:
-            kua_ling_yu.append(pre_holand_ans[i])
-        else:
-            ke_xi.append(pre_holand_ans[i])
-    
-    for item in ke_xi:
-        tem = item.split(":")   # list len 2, take 1
-        pre_data_1.append(tem[1])
-    
-    for item in kua_ling_yu:
-        tem = item.split(":")   # list len 2, take 1
-        pre_data_2.append(tem[1])
-    
-    for item in pre_holand_ans:
-        tem = item.split(":")
-        pre_data_3.append(tem[1])
-        
-    # split and append to final data
-    for item in pre_data_1:
-        split_item = item.split(",")
-        for i in split_item:
-            fina_data_1.append(i)
-    
-    for item in pre_data_2:
-        split_item = item.split(",")
-        for i in split_item:
-            final_data_2.append(i)
-    
-    for item in pre_data_3:
-        split_item = item.split(",")
-        for i in split_item:
-            final_data_3.append(i)
+    subject_ans = subject_ans.replace(' ','').replace('：',':')
+  holand_ans = holand_ans.replace(' ','').replace('：',':')
 
-    # no repeat
-    x= ",".join(list(set(fina_data_1)))
-    y= ",".join(list(set(final_data_2)))
-    z= ",".join(list(set(final_data_3)))
-    
-    text= x+"\n"+y+"\n"+z
-    return text
+  pre_subject_ans= subject_ans.split('\n')
+  pre_holand_ans= holand_ans.split('\n')
 
+  # 雙輔系灌木叢
+  aux_dep = []
+  # 第二專長小溪
+  sec_spec = []
+  # 跨域學程洞穴
+  cro_dom = []
+
+  for item in pre_subject_ans:
+    if '雙輔系灌木叢' in item:
+      for i in item[7:].split(','):
+        aux_dep.append(i)
+    elif '第二專長小溪' in item:
+      for i in item[7:].split(','):
+        sec_spec.append(i)
+    elif '跨域學程洞穴' in item:
+      for i in item[7:].split(','):
+        cro_dom.append(i)
+  for item in pre_holand_ans:
+    if '雙輔系灌木叢' in item:
+      for i in item[7:].split(','):
+        aux_dep.append(i)
+    elif '第二專長小溪' in item:
+      for i in item[7:].split(','):
+        sec_spec.append(i)
+    elif '跨域學程洞穴' in item:
+      for i in item[7:].split(','):
+        cro_dom.append(i)
+
+  aux_dep = [i for i in aux_dep if i != '']
+  sec_spec = [i for i in sec_spec if i != '']
+  cro_dom = [i for i in cro_dom if i != '']
+ 
+  aux = '雙輔系灌木叢：'
+  sec = '第二專長小溪：'
+  cro = '跨域學程洞穴：'
+  if list(unique_everseen(duplicates(aux_dep))) != []:
+    aux += list(unique_everseen(duplicates(aux_dep)))[0]
+  if list(unique_everseen(duplicates(sec_spec))) != []:
+    sec += list(unique_everseen(duplicates(sec_spec)))[0]
+  if list(unique_everseen(duplicates(cro_dom))) != []:
+    cro += list(unique_everseen(duplicates(cro_dom)))[0]
+
+  return aux + '\n' + sec + '\n' + cro
 
 
 
