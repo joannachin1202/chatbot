@@ -55,15 +55,17 @@ def callback(request):
                             x-=1
                             tem=[]
                             #清除
-                            line_bot_api.reply_message(event.reply_token,message = [ 
-                                TextSendMessage(
-                                    text=content
-                                    ),
-                                TextSendMessage( 
-                                    text ='快看！前面就是校務中心大榕樹了，聽說只要取得樹洞裡的UCAN測驗果實，再搭配先前從籃子中選取的跨域紅蘿蔔，就有機會找到整座森林中同時符合自身口味和興趣測驗結果的紅蘿蔔，讓我們一起來試試吧！'
-                                    )
-                                ]
-                               )
+                            message = [  #串列
+                                TextSendMessage(  
+                                text = content
+                                ), 
+                                TextSendMessage(  
+                                text = "快看！前面就是校務中心大榕樹了，聽說只要取得樹洞裡的UCAN測驗果實，再搭配先前從籃子中選取的跨域紅蘿蔔，就有機會找到整座森林中同時符合自身口味和興趣測驗結果的紅蘿蔔，讓我們一起來試試吧！"
+                                )
+                     
+                              ]
+          
+                            line_bot_api.reply_message(event.reply_token,message)
                     
                     elif mtext == '先等等':
                         func.先不用(event)
