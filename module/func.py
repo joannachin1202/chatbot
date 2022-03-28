@@ -570,84 +570,84 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 5:
+    if len(sec_spec) > 7:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 5:
+      if len(sec_spec) > 7:
         sec_spec = sec_spec[:-2]
       else:
         for key, value in sec_spec_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             sec_spec = sec_spec + key + ', '
-        if len(sec_spec) > 5:
+        if len(sec_spec) > 7:
           sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 8:
+    if len(cro_dom) > 7:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 8:
+      if len(cro_dom) > 7:
         cro_dom = cro_dom[:-2]
       else:
         for key, value in cro_dom_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             cro_dom = cro_dom + key + ', '
-        if len(cro_dom) > 8:
+        if len(cro_dom) > 7:
           cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    if len(aux_dep) > 3:
+    if len(aux_dep) > 7:
       aux_dep = aux_dep[:-2]
     else:
       for key, value in aux_dep_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           aux_dep = aux_dep + key + ', '
-      if len(aux_dep) > 3:
+      if len(aux_dep) > 7:
         aux_dep = aux_dep[:-2]
       else:
         for key, value in aux_dep_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             aux_dep = aux_dep + key + ', '
-        if len(aux_dep) > 3:
+        if len(aux_dep) > 7:
           aux_dep = aux_dep[:-2]
     # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 4:
+    if len(dou_maj) > 7:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 4:
+      if len(dou_maj) > 7:
         dou_maj = dou_maj[:-2]
       else:
         for key, value in dou_maj_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             dou_maj = dou_maj + key + ', '
-        if len(dou_maj) > 4:
+        if len(dou_maj) > 7:
           dou_maj = dou_maj[:-2]
   if len(holland_code) == 3:
     # 第二專長
@@ -655,56 +655,56 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 5:
+    if len(sec_spec) > 7:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 5:
+      if len(sec_spec) > 7:
         sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 8:
+    if len(cro_dom) > 7:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 8:
+      if len(cro_dom) > 7:
         cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    if len(aux_dep) > 3:
+    if len(aux_dep) > 7:
       aux_dep = aux_dep[:-2]
     else:
       for key, value in aux_dep_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           aux_dep = aux_dep + key + ', '
-      if len(aux_dep) > 3:
+      if len(aux_dep) > 7:
         aux_dep = aux_dep[:-2]
     # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 4:
+    if len(dou_maj) > 7:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 4:
+      if len(dou_maj) > 7:
         dou_maj = dou_maj[:-2]
   if len(holland_code) == 1:
     # 第二專長
@@ -712,56 +712,56 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 5:
+    if len(sec_spec) > 7:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 5:
+      if len(sec_spec) > 7:
         sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 8:
+    if len(cro_dom) > 7:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 8:
+      if len(cro_dom) > 7:
         cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    if len(aux_dep) > 3:
+    if len(aux_dep) > 7:
       aux_dep = aux_dep[:-2]
     else:
       for key, value in aux_dep_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           aux_dep = aux_dep + key + ', '
-      if len(aux_dep) > 3:
+      if len(aux_dep) > 7:
         aux_dep = aux_dep[:-2]
     # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 4:
+    if len(dou_maj) > 7:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 4:
+      if len(dou_maj) > 7:
         dou_maj = dou_maj[:-2]
   return sec_spec + '\n' + cro_dom + '\n' + dou_maj
 
