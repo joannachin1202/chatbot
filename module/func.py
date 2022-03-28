@@ -765,10 +765,10 @@ def return_course(holland_code):
 
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
-  holand_ans = holand_ans.replace(' ','').replace('：',':')
+    holand_ans = holand_ans.replace(' ','').replace('：',':')
 
-  pre_subject_ans= subject_ans.split('\n')
-  pre_holand_ans= holand_ans.split('\n')
+    pre_subject_ans= subject_ans.split('\n')
+    pre_holand_ans= holand_ans.split('\n')
 
   # 雙輔系灌木叢
   aux_dep = []
