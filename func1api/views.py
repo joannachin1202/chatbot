@@ -22,6 +22,8 @@ student_id=list(func.arrange_data('number1.csv'))
 def callback(request):
     global x
     global tem
+    global text
+    global rows
     
     if request.method == 'POST':
         message=[]
@@ -46,7 +48,7 @@ def callback(request):
                     elif x==1:
                         tem.append(mtext)
                         if len(tem)==3:
-                            
+                            text_intersection = tem
                             content=func.subject(tem)
                             x-=1
                             tem=[]
@@ -66,14 +68,16 @@ def callback(request):
                         x+=1
                     
                     elif mtext == '交集':
+                        subject_ans = func.subject(text_intersection)
+                        rows = arrange_data('number1.csv') 
+                        
+                        holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         func.get_connection(subject_ans,holand_ans)
     
-                        
-                    
                 
                     elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
-                        
+                        stu_id_intersection = mtext
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
                         
