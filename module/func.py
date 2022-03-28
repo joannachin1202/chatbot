@@ -559,11 +559,11 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec ="第二專長小溪："
-  cro_dom ="跨域學程洞穴： "
+  sec_spec = '第二專長：'
+  cro_dom = '跨領域學分學程：'
   aux_dep = '輔系：'
-  dou_maj ="雙輔系灌木叢："
-  
+  dou_maj = '雙主修：'
+
   if len(holland_code) == 5:
     # 第二專長
     for key, value in sec_spec_rows.items():
