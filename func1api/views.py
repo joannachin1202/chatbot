@@ -75,6 +75,7 @@ def callback(request):
                         
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         content=func.get_connection(subject_ans,holand_ans)
+                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=holand))     
     
                 
                     elif mtext in student_id:
