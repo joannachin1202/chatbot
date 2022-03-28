@@ -70,7 +70,7 @@ def callback(request):
                     
                     elif mtext == '交集':
                         subject_ans = func.subject(text_intersection)
-                        rows = arrange_data('number1.csv') 
+                        rows = func.arrange_data('number1.csv') 
                         
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         func.get_connection(subject_ans,holand_ans)
