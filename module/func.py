@@ -7,6 +7,8 @@ from linebot.models import TextSendMessage
 
 from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
 from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction
+from iteration_utilities import duplicates
+from iteration_utilities import unique_everseen
 import os
 import pandas as pd
 import csv
@@ -777,26 +779,26 @@ def get_connection(subject_ans,holand_ans):
   # 跨域學程洞穴
     cro_dom = []
 
-  for item in pre_subject_ans:
-    if '雙輔系灌木叢' in item:
-      for i in item[7:].split(','):
-        aux_dep.append(i)
-    elif '第二專長小溪' in item:
-      for i in item[7:].split(','):
-        sec_spec.append(i)
-    elif '跨域學程洞穴' in item:
-      for i in item[7:].split(','):
-        cro_dom.append(i)
-  for item in pre_holand_ans:
-    if '雙輔系灌木叢' in item:
-      for i in item[7:].split(','):
-        aux_dep.append(i)
-    elif '第二專長小溪' in item:
-      for i in item[7:].split(','):
-        sec_spec.append(i)
-    elif '跨域學程洞穴' in item:
-      for i in item[7:].split(','):
-        cro_dom.append(i)
+    for item in pre_subject_ans:
+      if '雙輔系灌木叢' in item:
+        for i in item[7:].split(','):
+          aux_dep.append(i)
+      elif '第二專長小溪' in item:
+        for i in item[7:].split(','):
+          sec_spec.append(i)
+      elif '跨域學程洞穴' in item:
+        for i in item[7:].split(','):
+          cro_dom.append(i)
+    for item in pre_holand_ans:
+      if '雙輔系灌木叢' in item:
+        for i in item[7:].split(','):
+          aux_dep.append(i)
+      elif '第二專長小溪' in item:
+        for i in item[7:].split(','):
+          sec_spec.append(i)
+      elif '跨域學程洞穴' in item:
+        for i in item[7:].split(','):
+          cro_dom.append(i)
 
     aux_dep = [i for i in aux_dep if i != '']
     sec_spec = [i for i in sec_spec if i != '']
@@ -805,14 +807,14 @@ def get_connection(subject_ans,holand_ans):
     aux = '雙輔系灌木叢：'
     sec = '第二專長小溪：'
     cro = '跨域學程洞穴：'
-  if list(unique_everseen(duplicates(aux_dep))) != []:
-    aux += list(unique_everseen(duplicates(aux_dep)))[0]
-  if list(unique_everseen(duplicates(sec_spec))) != []:
-    sec += list(unique_everseen(duplicates(sec_spec)))[0]
-  if list(unique_everseen(duplicates(cro_dom))) != []:
-    cro += list(unique_everseen(duplicates(cro_dom)))[0]
+    if list(unique_everseen(duplicates(aux_dep))) != []:
+      aux += list(unique_everseen(duplicates(aux_dep)))[0]
+    if list(unique_everseen(duplicates(sec_spec))) != []:
+      sec += list(unique_everseen(duplicates(sec_spec)))[0]
+    if list(unique_everseen(duplicates(cro_dom))) != []:
+      cro += list(unique_everseen(duplicates(cro_dom)))[0]
 
-  return aux + '\n' + sec + '\n' + cro
+    return aux + '\n' + sec + '\n' + cro
 
 
 
