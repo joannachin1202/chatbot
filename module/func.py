@@ -771,11 +771,11 @@ def get_connection(subject_ans,holand_ans):
     pre_holand_ans= holand_ans.split('\n')
 
   # 雙輔系灌木叢
-  aux_dep = []
+    aux_dep = []
   # 第二專長小溪
-  sec_spec = []
+    sec_spec = []
   # 跨域學程洞穴
-  cro_dom = []
+    cro_dom = []
 
   for item in pre_subject_ans:
     if '雙輔系灌木叢' in item:
@@ -798,13 +798,13 @@ def get_connection(subject_ans,holand_ans):
       for i in item[7:].split(','):
         cro_dom.append(i)
 
-  aux_dep = [i for i in aux_dep if i != '']
-  sec_spec = [i for i in sec_spec if i != '']
-  cro_dom = [i for i in cro_dom if i != '']
+    aux_dep = [i for i in aux_dep if i != '']
+    sec_spec = [i for i in sec_spec if i != '']
+    cro_dom = [i for i in cro_dom if i != '']
  
-  aux = '雙輔系灌木叢：'
-  sec = '第二專長小溪：'
-  cro = '跨域學程洞穴：'
+    aux = '雙輔系灌木叢：'
+    sec = '第二專長小溪：'
+    cro = '跨域學程洞穴：'
   if list(unique_everseen(duplicates(aux_dep))) != []:
     aux += list(unique_everseen(duplicates(aux_dep)))[0]
   if list(unique_everseen(duplicates(sec_spec))) != []:
