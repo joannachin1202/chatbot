@@ -5,6 +5,9 @@ from django.views.decorators.csrf import csrf_exempt
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot.models import MessageEvent, TextMessage , TextSendMessage
+from linebot.models import TextSendMessage
+from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
+from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction
 from module import func
 
 
@@ -81,7 +84,7 @@ def callback(request):
                                )
                                )
                      
-                            ]
+                            
                           )
                         )
                       ]
