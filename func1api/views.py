@@ -50,12 +50,14 @@ def callback(request):
                     mtext = event.message.text
                     if mtext == '兔子' or '兔' or '小兔' or '小兔子' or 'rabbit': #希望調整成只要輸入任意文字都會回覆
                         func.begin(event)
-                    
+                    elif mtext == '': 
+                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='不對耶\n再看一次小圖的頭貼吧！')) 
+                        
                     #要看 tem 有多長用 len（）
                     # 當長度是三時我
-                    if x==1:
+                    elif x==1:
                         tem.append(mtext)
-                    elif len(tem)==3:
+                        if len(tem)==3:
                             text_intersection = tem
                             content=func.subject(tem)
                             x-=1
@@ -98,23 +100,23 @@ def callback(request):
                       ]
                     line_bot_api.reply_message(event.reply_token,message)
             
-                    if mtext == '先等等':
+                elif mtext == '先等等':
                         func.先不用(event)
-                    if mtext == '出發囉':
+                elif mtext == '出發囉':
                         
                         func.提供關鍵詞(event)
                         x+=1
                     
-                    if mtext == '好呀！':
+                elif mtext == '好呀！':
                         func.提供關鍵詞(event)
                         x+=1
                     
-                    if mtext == '先不用':
+                elif mtext == '先不用':
                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友，若你想了解更多跨域森林或各個蘿蔔坑的資訊，可以在下方的選單找森林裡的其他朋友了解相關功能喔！\n隨時歡迎你呼喊我的名字「小圖」，回來找我聊天喔～')) 
                         
 
                     
-                    if mtext == '雙修輔系灌木叢' or '跨域學程洞穴' or '第二專長小溪' or '我目前選不出來' :
+                elif mtext == '雙修輔系灌木叢' or '跨域學程洞穴' or '第二專長小溪' or '我目前選不出來' :
                         subject_ans = func.subject(text_intersection)
                         rows = func.arrange_data('number1.csv') 
                         
@@ -137,7 +139,7 @@ def callback(request):
                         line_bot_api.reply_message(event.reply_token,message)     
     
                 
-                    if mtext in student_id:
+                elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
                         stu_id_intersection = mtext
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
@@ -175,8 +177,8 @@ def callback(request):
                          ]
           
                         line_bot_api.reply_message(event.reply_token,message)
-                    elif output=='':
-                        message = [  #串列
+                        if output=='':
+                           message = [  #串列
                                 TextSendMessage(  
                                 text = '但我試吃了一下你的跨域簡餐，發現這兩個味道相差太大了，實在不能配在一起享用，因此無法提供給你，很抱歉！'
                                 ), 
@@ -206,7 +208,7 @@ def callback(request):
                          ]
           
                         line_bot_api.reply_message(event.reply_token,message)
-                    else:
+                else:
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='感謝你！\n但很抱歉，樹洞裡找不到與你學號相對應的測驗果實，因此無法製作跨域簡餐(◞‸◟)')) 
                         
                         
