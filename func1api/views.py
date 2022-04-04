@@ -78,10 +78,7 @@ def callback(request):
                                 MessageTemplateAction(  #顯示文字計息
                                 label='第二專長小溪',
                                 text='第二專長小溪'
-                               ),
-                                MessageTemplateAction(  #顯示文字計息
-                                label='我目前選不出來',
-                                text='我目前選不出來'
+                               )
                                )
                      
                             ]
@@ -105,7 +102,7 @@ def callback(request):
                 elif mtext == '先不用':
                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友，若你想了解更多跨域森林或各個蘿蔔坑的資訊，可以在下方的選單找森林裡的其他朋友了解相關功能喔！\n隨時歡迎你呼喊我的名字「小圖」，回來找我聊天喔～')) 
                     
-                elif mtext == '雙修輔系灌木叢' or '跨域學程洞穴' or '第二專長小溪' or '我目前選不出來' :
+                elif mtext == '雙修輔系灌木叢':
                         subject_ans = func.subject(text_intersection)
                         rows = func.arrange_data('number1.csv') 
                         
