@@ -50,9 +50,7 @@ def callback(request):
                     mtext = event.message.text
                     if mtext == '兔子' or '兔' or '小兔' or '小兔子' or 'rabbit': #希望調整成只要輸入任意文字都會回覆
                         func.begin(event)
-                    else: 
-                        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='不對耶\n再看一次小圖的頭貼吧！')) 
-                        
+                    
                     #要看 tem 有多長用 len（）
                     # 當長度是三時我
                     if x==1:
