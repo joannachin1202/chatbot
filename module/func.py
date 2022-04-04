@@ -13,6 +13,7 @@ import os
 import pandas as pd
 import csv
 import numpy as np
+import time
 
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
@@ -23,8 +24,9 @@ def begin(event):  #多項傳送
             TextSendMessage(  
             text = "叮咚叮！答對了\n歡迎進入森林～"
             ), 
+            time.sleep(2),
             TextSendMessage(  
-            text = "小圖作為森林的嚮導，將竭盡所能地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你胃口的跨域蘿蔔坑！"
+            text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
            TemplateSendMessage(
             alt_text='準備好一起探索這座森林了嗎？',
@@ -46,11 +48,19 @@ def begin(event):  #多項傳送
         ]
         line_bot_api.reply_message(event.reply_token,message)
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='不對耶\n再看一次小圖的頭貼吧！'))
         
 def 先不用(event): 
     try:
-        message = TextSendMessage(text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你留言給小圖哦！') 
+        message = [
+        TextSendMessage(
+        text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你以下透過連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8'
+        ),
+        time.sleep(2),
+        TextSendMessage(  
+        text = "當你準備好探索森林時，歡迎你隨時呼喊我的名字「小圖」,回來找我一起玩喔~"
+        )
+    ]
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
@@ -61,10 +71,7 @@ def 提供關鍵詞(event):
     try:
         message = [  #串列
             TextSendMessage(  
-            text = "٩(●ᴗ●)۶ 好的，那麼我們開始啦～"
-             ), 
-            TextSendMessage(  
-            text = "首先，請你從下方兩個籃子中點選三個符合你口味的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
+            text = "請你從下方兩個籃子中點選三個符合你興趣／發展方向的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
              ),
             ImagemapSendMessage(
             base_url= "https://imgur.com/qDsM6xm.png",
@@ -488,9 +495,9 @@ def subject(array):
     # elimate repeated text
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
-    text_1="雙輔系灌木叢🌳："
-    text_2="跨域學程洞穴🛕： "
-    text_3="第二專長小溪🏞："
+    text_1="🌳雙輔系灌木叢："
+    text_2="🛕跨域學程洞穴： "
+    text_3="🏞第二專長小溪："
 
     for i in range(len(derpar)):
         if i==0:
@@ -521,36 +528,7 @@ def subject(array):
     
     return text
     
-def 關鍵字結果(event): 
-    try:
-        message = [  #串列
-            TextSendMessage(  
-            text = "叮咚叮！答對了\n歡迎進入森林～"
-            ), 
-            TextSendMessage(  
-            text = "小圖作為森林的嚮導，將竭盡所能地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你胃口的跨域蘿蔔坑！"
-            ), 
-           TemplateSendMessage(
-            alt_text='準備好一起探索這座森林了嗎？',
-            template=ConfirmTemplate(
-                text='準備好一起探索這座森林了嗎？',  #主標題
-                actions=[    
-                   MessageTemplateAction(  
-                         label='出發囉', #按鈕文字
-                         text='出發囉' #顯示文字計息  
-                   ),
-                    MessageTemplateAction(  #顯示文字計息
-                        label='先等等',
-                        text='先等等'
-                        )
-                     
-                ]
-            )
-          )
-        ]
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
 
 
 
@@ -797,7 +775,7 @@ def return_course(holland_code):
           dou_maj = dou_maj + key + ', '
       if len(dou_maj) > 7:
         dou_maj = dou_maj[:-2]
-  return sec_spec + '\n' + cro_dom + '\n' + dou_maj
+  return '但是根據你的果實，我可以為你推薦以下幾個擁有豐富營養素的地方：'+'\n'+'\n' +sec_spec + '\n' + cro_dom + '\n' + dou_maj
 
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
@@ -848,7 +826,7 @@ def get_connection(subject_ans,holand_ans):
     if list(unique_everseen(duplicates(cro_dom))) != []:
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
 
-    return '有了你存放的職涯興趣測驗果實的幫助，以下幾個地方最有可能長出符合你胃口和興趣測驗結果的跨領域紅蘿蔔，他們分佈在下面這些地方：' + '\n'+ aux + '\n' + sec + '\n' + cro
+    return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n' + '\n'+ aux + '\n' + sec + '\n' + cro
 
 
 
