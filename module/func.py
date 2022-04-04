@@ -24,7 +24,6 @@ def begin(event):  #多項傳送
             TextSendMessage(  
             text = "叮咚叮！答對了\n歡迎進入森林～"
             ), 
-            time.sleep(2),
             TextSendMessage(  
             text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
@@ -48,7 +47,7 @@ def begin(event):  #多項傳送
         ]
         line_bot_api.reply_message(event.reply_token,message)
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='不對耶\n再看一次小圖的頭貼吧！'))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
         
 def 先不用(event): 
     try:
