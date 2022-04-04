@@ -55,7 +55,6 @@ def 先不用(event):
         TextSendMessage(
         text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你以下透過連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8'
         ),
-        time.sleep(2),
         TextSendMessage(  
         text = "當你準備好探索森林時，歡迎你隨時呼喊我的名字「小圖」,回來找我一起玩喔~"
         )
