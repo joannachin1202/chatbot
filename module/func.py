@@ -452,7 +452,38 @@ def 提供關鍵詞(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-
+def 關鍵字結果(event):
+    try:
+        message = [  #串列
+            TemplateSendMessage(
+            alt_text='選擇紅蘿蔔坑',
+            template=ButtonsTemplate(
+            text='在以上的推薦中，你覺得哪一區域的蘿蔔坑最符合你的發展目標或興趣呢？',  #主標題
+            actions=[    
+            MessageTemplateAction(  
+            label='雙修輔系灌木叢', #按鈕文字
+            text='雙修輔系灌木叢' #顯示文字計息  
+            ),
+            MessageTemplateAction(  #顯示文字計息
+            label='跨域學程洞穴',
+            text='跨域學程洞穴'
+            ),
+            MessageTemplateAction(  #顯示文字計息
+            label='第二專長小溪',
+            text='第二專長小溪'
+            ),
+            MessageTemplateAction(  #顯示文字計息
+            label='我目前選不出來',
+            text='我目前選不出來'
+            )
+                     
+           ]
+         )
+        )
+    ]
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
         
 def subject(array):
