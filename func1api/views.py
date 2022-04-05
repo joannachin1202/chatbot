@@ -69,19 +69,19 @@ def callback(request):
                         ]
                     line_bot_api.reply_message(event.reply_token,message)
             
-                    elif mtext == '先等等':
+                elif mtext == '先等等':
                         func.先不用(event)
-                    elif mtext == '出發囉':
+                elif mtext == '出發囉':
                         
                         func.提供關鍵詞(event)
                         x+=1
                     
-                    elif mtext == '好呀！':
+                elif mtext == '好呀！':
                         
                         func.提供關鍵詞(event)
                         x+=1
                     
-                    elif mtext == '交集':
+                elif mtext == '交集':
                         subject_ans = func.subject(text_intersection)
                         rows = func.arrange_data('number1.csv') 
                         
@@ -90,7 +90,7 @@ def callback(request):
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=output))     
     
                 
-                    elif mtext in student_id:
+                elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
                         stu_id_intersection = mtext
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
