@@ -82,9 +82,6 @@ def callback(request):
                                 label='第二專長小溪',
                                 text='第二專長小溪'
                                )
-                               )
-                     
-                            
                           )
                         )
                       ]
