@@ -82,6 +82,9 @@ def callback(request):
                                 label='第二專長小溪',
                                 text='第二專長小溪'
                                )
+                        
+                            ]
+                          )
                         )
                       ]
                     line_bot_api.reply_message(event.reply_token,message)
