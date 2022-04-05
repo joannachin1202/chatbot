@@ -52,6 +52,7 @@ def callback(request):
                         if len(tem)==3:
                             text_intersection = tem
                             content=func.subject(tem)
+                            review=func.關鍵字結果(event)
                             x-=1
                             tem=[]
                             #清除
@@ -63,15 +64,10 @@ def callback(request):
                                 text = content
                                 ), 
                                 TextSendMessage(  
-                                text = "快看！前面就是校務中心大榕樹了，聽說只要取得樹洞裡的UCAN測驗果實，再搭配先前從籃子中選取的跨域紅蘿蔔，就有機會找到整座森林中同時符合自身口味和興趣測驗結果的紅蘿蔔，讓我們一起來試試吧！"
-                                ),
-                                TextSendMessage(  
-                                text = "接下來將依據你最近一次透過UCAN平台進行職涯興趣測驗時，存放在校務資料中心樹洞裡的測驗果實來幫助你探索森林，請輸入你的學號讓我為你找出你的測驗果實吧～"
+                                text = review
                                 )
-                     
-                              ]
-          
-                            line_bot_api.reply_message(event.reply_token,message)
+                        ]
+                    line_bot_api.reply_message(event.reply_token,message)
             
                     elif mtext == '先等等':
                         func.先不用(event)
