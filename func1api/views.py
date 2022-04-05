@@ -80,7 +80,7 @@ def callback(request):
                         func.提供關鍵詞(event)
                         x+=1
                     
-                    elif mtext == '回跨域紅蘿蔔':
+                    elif mtext == '好呀！':
                         
                         func.提供關鍵詞(event)
                         x+=1
