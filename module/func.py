@@ -6,7 +6,7 @@ from linebot.models import TextSendMessage
 
 
 from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
-from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction
+from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction, URIImagemapAction
 from iteration_utilities import duplicates
 from iteration_utilities import unique_everseen
 import os
@@ -1005,6 +1005,195 @@ def 聯絡人資訊(event):
                 x=729, y=554, width=160, height=70
                 )
             )            
+         ],
+        ),
+        
+         ImagemapSendMessage(
+        base_url= "https://imgur.com/pFsJhb8.png",
+        alt_text='學程＆第二專長聯絡人',
+        base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+       MessageImagemapAction(
+            text='聯絡人：黃炫榕 助理\nE-mail：pcci@gm.scu.edu.tw 電話：02-2881 9471＃6104 辦公室：111台北市士林區臨溪路70號 第二教研大樓十樓D1007室 http://www.scu.edu.tw/pcci/',
+            area=ImagemapArea(
+                x=198, y=109, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：黃炫榕 助理\nE-mail：pcci@gm.scu.edu.tw\n電話：02-2881 9471＃6104\n辦公室：111台北市士林區臨溪路70號 第二教研大樓十樓D1007室\nhttp://www.scu.edu.tw/pcci/',
+            area=ImagemapArea(
+                x=18, y=111, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：熊賢芝 秘書\nE-mail：hchsiung@scu.edu.tw\n電話：02-2881 9471＃6102\nhttps://web-ch.scu.edu.tw/artsoc/web_page/8635',
+            area=ImagemapArea(
+                x=353, y=120, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：黃依晴 助教\n電話：02-2881 9471＃6951\nE-mail：yiching@scu.edu.tw\nhttp://www.hrp.scu.edu.tw/aboutUs/staff/%E8%A1%8C%E6%94%BF%E4%BA%BA%E5%93%A1%E4%BB%8B%E7%B4%B9',
+            area=ImagemapArea(
+                x=541, y=112, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            area=ImagemapArea(
+                x=702, y=112, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            area=ImagemapArea(
+                x=871, y=104, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：江怡靜\nE-mail ：yiching0701@scu.edu.tw\n電話：02-2311 1531＃2881\n辦公室 : 10048 台北市中正區貴陽街一段五十六號\nhttps://web-ch.scu.edu.tw/ife/dept_member/6734',
+            area=ImagemapArea(
+                x=33, y=240, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：江怡靜\nE-mail ：yiching0701@scu.edu.tw\n電話：02-2311 1531＃2881\n辦公室 : 10048 台北市中正區貴陽街一段五十六號\nhttps://web-ch.scu.edu.tw/ife/dept_member/6734',
+            area=ImagemapArea(
+                x=187, y=253, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=367, y=217, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=538, y=241, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=706, y=239, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=869, y=235, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=41, y=341, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=206, y=347, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=373, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=522, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=691, y=351, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：張秀卿\n電話：02-2881 9471＃6173',
+            area=ImagemapArea(
+                x=867, y=352, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：楊雅惠\n電話：02-2881 9471＃6212',
+            area=ImagemapArea(
+                x=37, y=458, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：王姿惠\n電話：02-2881 9471＃6252',
+            area=ImagemapArea(
+                x=184, y=452, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：古政昕\n電話：02-2881 9471＃6302',
+            area=ImagemapArea(
+                x=369, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：歐孟芬\n電話：02-2881 9471＃6332',
+            area=ImagemapArea(
+                x=510, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：歐孟芬\n電話：02-2881 9471＃6332',
+            area=ImagemapArea(
+                x=687, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：施宜德\n電話：02-2881 9471＃6372',
+            area=ImagemapArea(
+                x=863, y=450, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：張怡\n電話：02-2881 9471＃6462',
+            area=ImagemapArea(
+                x=37, y=560, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：施璇姬\n電話：02-2881 9471＃6482',
+            area=ImagemapArea(
+                x=200, y=552, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：施璇姬\n電話：02-2881 9471＃6482',
+            area=ImagemapArea(
+                x=371, y=558, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：范清昉\n電話：02-2881 9471＃6522',
+            area=ImagemapArea(
+                x=544, y=552, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：范清昉\n電話：02-2881 9471＃6522',
+            area=ImagemapArea(
+                x=706, y=564, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：楊淑卿\n電話：02-2881 9471＃6562',
+            area=ImagemapArea(
+                x=859, y=552, width=140, height=90
+            )
+           )
          ],
         ),
             
