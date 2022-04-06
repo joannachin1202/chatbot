@@ -113,6 +113,20 @@ def callback(request):
                               ]
           
                         line_bot_api.reply_message(event.reply_token,message)
+                   
+                    elif mtext == '承辦人員資訊':
+                         func.聯絡人資訊(event)
+                    
+                    elif mtext == '應修課程':
+                         func.應修課程(event)
+                         
+                    elif mtext == '申請條件':
+                         func.申請條件(event)
+                    
+                    elif mtext == '本學期開課':
+                         func.本學期開課(event)
+                    
+                    
                             
                         
                         
