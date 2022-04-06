@@ -42,8 +42,22 @@ def callback(request):
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
                     mtext = event.message.text
+                    
+                    
                     if mtext == '兔子': #希望調整成只要輸入任意文字都會回覆
-                        func.begin(event)         
+                        func.begin(event)  
+                        
+                    elif mtext == '承辦人員資訊':
+                         func.聯絡人資訊(event)
+                    
+                    elif mtext == '應修課程':
+                         func.應修課程(event)
+                         
+                    elif mtext == '申請條件':
+                         func.申請條件(event)
+                    
+                    elif mtext == '本學期開課':
+                         func.本學期開課(event)
                         
                     #要看 tem 有多長用 len（）
                     # 當長度是三時我
@@ -114,22 +128,6 @@ def callback(request):
           
                         line_bot_api.reply_message(event.reply_token,message)
                    
-                    elif mtext == '承辦人員資訊':
-                         func.聯絡人資訊(event)
-                    
-                    elif mtext == '應修課程':
-                         func.應修課程(event)
-                         
-                    elif mtext == '申請條件':
-                         func.申請條件(event)
-                    
-                    elif mtext == '本學期開課':
-                         func.本學期開課(event)
-                    
-                    
-                            
-                        
-                        
                   
             
                   
