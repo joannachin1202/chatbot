@@ -1393,31 +1393,31 @@ def 聯絡人資訊(event):
         
 def 應修課程(event): 
     try:
-        TextSendMessage(
-        text='◆查看「雙修輔系灌木」和「跨領域洞穴」應修課程：\n   http://www.scu.edu.tw/~curr/p3-2cos.htm\n◇查看「第二專長小溪」應修課程:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
+        message=TextSendMessage(
+        text='◆查看「雙修輔系灌木」和「跨領域洞穴」應修課程：\n http://www.scu.edu.tw/~curr/p3-2cos.htm\n◇查看「第二專長小溪」應修課程:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
         )
         
-        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
         
 def 申請條件(event): 
     try:
-        TextSendMessage(
+        message=TextSendMessage(
         text='◆查看「雙修輔系灌木」和「跨領域洞穴」申請條件：\n   https://api.sys.scu.edu.tw/academic/\n◇查看「第二專長小溪」申請條件:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
         )
         
-        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
         
 def 本學期開課(event): 
     try:
-        TextSendMessage(
+        message=TextSendMessage(
         text='◆查看「雙修輔系灌木」和「跨領域洞穴」本學期開課：\n   https://web.sys.scu.edu.tw/class40.asp?option=1\n◇查看「第二專長小溪」本學期開課: \n   https://course.sys.scu.edu.tw/currlist/SecExpQueryCls.aspx'
         )
         
-        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
