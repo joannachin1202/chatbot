@@ -858,6 +858,570 @@ def get_connection(subject_ans,holand_ans):
     return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n' + '\n'+ aux + '\n' + sec + '\n' + cro
 
 
+def 聯絡人資訊(event):  
+    try:
+        message = [  #串列
+            ImagemapSendMessage(
+            base_url= "https://imgur.com/SCqhhaM.png",
+            alt_text='雙輔系聯絡人',
+             base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+       URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/chinese/dept_member/3374',
+            area=ImagemapArea(
+                x=12, y=125, width=160, height=70
+               )
+            ),
+        URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/history/teacher_resume/5234',
+            area=ImagemapArea(
+                x=226, y=109, width=160, height=70
+              )
+            ),
+        URIImagemapAction(
+             link_uri='https://web-ch.scu.edu.tw/philos/dept_member/5986',
+            area=ImagemapArea(
+                x=445, y=117, width=160, height=70
+                )
+            ),
+        URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/politics/dept_member/7895',
+            area=ImagemapArea(
+                x=667, y=109, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/society/dept_member/375',
+            area=ImagemapArea(
+                x=867, y=107, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/sw/dept_member/3535',
+            area=ImagemapArea(
+                x=6, y=234, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://english.scu.edu.tw/?page_id=2267',
+            area=ImagemapArea(
+                x=246, y=230, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/japanese/dept_member/3883',
+            area=ImagemapArea(
+                x=449, y=230, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/deutsch/staff/6037',
+            area=ImagemapArea(
+                x=663, y=238, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/math/dept_member/561',
+            area=ImagemapArea(
+                x=875, y=226, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://www.phys.scu.edu.tw/index.php/zh-tw/page-menuitem-staff-assistant',
+            area=ImagemapArea(
+                x=18, y=339, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/chem/dept_member/11459',
+            area=ImagemapArea(
+                x=248, y=331, width=160, height=70
+                )
+            ),
+        URIImagemapAction(
+            link_uri='https://microbiology.scu.edu.tw/nexus/content/%E7%B3%BB%E8%BE%A6%E5%85%AC%E5%AE%A4',
+            area=ImagemapArea(
+                x=453, y=333, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/psy/dept_member/3986',
+            area=ImagemapArea(
+                x=665, y=349, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/law/staff/5357',
+            area=ImagemapArea(
+                x=881, y=345, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/econ/dept_member/5274',
+            area=ImagemapArea(
+                x=18, y=456, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_urit='https://web-ch.scu.edu.tw/acc/dept_member/4226',
+            area=ImagemapArea(
+                x=238, y=439, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://www.ba.scu.edu.tw/zh-hant/administration',
+            area=ImagemapArea(
+                x=435, y=443, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/ibsu/web_page/12009',
+            area=ImagemapArea(
+                x=669, y=443, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://www.feam.scu.edu.tw/faculty/6',
+            area=ImagemapArea(
+                x=863, y=435, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://www.csim.scu.edu.tw/teacher_list.aspx?c=TEACHER&cid=3',
+            area=ImagemapArea(
+                x=112, y=562, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/music/dept_member/3615',
+            area=ImagemapArea(
+                x=424, y=550, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://bigdata.scu.edu.tw/team/#executive-lineup',
+            area=ImagemapArea(
+                x=729, y=554, width=160, height=70
+                )
+            )            
+         ],
+        ),
+            
+        ImagemapSendMessage(
+        base_url= "https://imgur.com/pFsJhb8.png",
+        alt_text='學程＆第二專長聯絡人',
+        base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+       MessageImagemapAction(
+            text='聯絡人：黃炫榕 助理\nE-mail：pcci@gm.scu.edu.tw 電話：02-2881 9471＃6104 辦公室：111台北市士林區臨溪路70號 第二教研大樓十樓D1007室 http://www.scu.edu.tw/pcci/',
+            area=ImagemapArea(
+                x=198, y=109, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：黃炫榕 助理\nE-mail：pcci@gm.scu.edu.tw\n電話：02-2881 9471＃6104\n辦公室：111台北市士林區臨溪路70號 第二教研大樓十樓D1007室\nhttp://www.scu.edu.tw/pcci/',
+            area=ImagemapArea(
+                x=18, y=111, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：熊賢芝 秘書\nE-mail：hchsiung@scu.edu.tw\n電話：02-2881 9471＃6102\nhttps://web-ch.scu.edu.tw/artsoc/web_page/8635',
+            area=ImagemapArea(
+                x=353, y=120, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：黃依晴 助教\n電話：02-2881 9471＃6951\nE-mail：yiching@scu.edu.tw\nhttp://www.hrp.scu.edu.tw/aboutUs/staff/%E8%A1%8C%E6%94%BF%E4%BA%BA%E5%93%A1%E4%BB%8B%E7%B4%B9',
+            area=ImagemapArea(
+                x=541, y=112, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            area=ImagemapArea(
+                x=702, y=112, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            area=ImagemapArea(
+                x=871, y=104, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：江怡靜\nE-mail ：yiching0701@scu.edu.tw\n電話：02-2311 1531＃2881\n辦公室 : 10048 台北市中正區貴陽街一段五十六號\nhttps://web-ch.scu.edu.tw/ife/dept_member/6734',
+            area=ImagemapArea(
+                x=33, y=240, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：江怡靜\nE-mail ：yiching0701@scu.edu.tw\n電話：02-2311 1531＃2881\n辦公室 : 10048 台北市中正區貴陽街一段五十六號\nhttps://web-ch.scu.edu.tw/ife/dept_member/6734',
+            area=ImagemapArea(
+                x=187, y=253, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=367, y=217, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=538, y=241, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=706, y=239, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=869, y=235, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=41, y=341, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳如玉\n電話：02-2881 9471＃6103',
+            area=ImagemapArea(
+                x=206, y=347, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=373, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=522, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：靶耐歐兒\n電話：02-2881 9471＃6133',
+            area=ImagemapArea(
+                x=691, y=351, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：張秀卿\n電話：02-2881 9471＃6173',
+            area=ImagemapArea(
+                x=867, y=352, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：楊雅惠\n電話：02-2881 9471＃6212',
+            area=ImagemapArea(
+                x=37, y=458, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：王姿惠\n電話：02-2881 9471＃6252',
+            area=ImagemapArea(
+                x=184, y=452, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：古政昕\n電話：02-2881 9471＃6302',
+            area=ImagemapArea(
+                x=369, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：歐孟芬\n電話：02-2881 9471＃6332',
+            area=ImagemapArea(
+                x=510, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：歐孟芬\n電話：02-2881 9471＃6332',
+            area=ImagemapArea(
+                x=687, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：施宜德\n電話：02-2881 9471＃6372',
+            area=ImagemapArea(
+                x=863, y=450, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：張怡\n電話：02-2881 9471＃6462',
+            area=ImagemapArea(
+                x=37, y=560, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：施璇姬\n電話：02-2881 9471＃6482',
+            area=ImagemapArea(
+                x=200, y=552, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：施璇姬\n電話：02-2881 9471＃6482',
+            area=ImagemapArea(
+                x=371, y=558, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：范清昉\n電話：02-2881 9471＃6522',
+            area=ImagemapArea(
+                x=544, y=552, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：范清昉\n電話：02-2881 9471＃6522',
+            area=ImagemapArea(
+                x=706, y=564, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：楊淑卿\n電話：02-2881 9471＃6562',
+            area=ImagemapArea(
+                x=859, y=552, width=140, height=90
+            )
+           )
+         ],
+        ),
+        
+            ImagemapSendMessage(
+            base_url= "https://imgur.com/qfGPhgw.png",
+            alt_text='第二專長聯絡人',
+             base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+      MessageImagemapAction(
+            text='聯絡人：劉紋伶\n電話：02-2881 9471＃6652',
+            area=ImagemapArea(
+                x=37, y=120, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：任士芬\n電話：02-2881 9471＃6682',
+            area=ImagemapArea(
+                x=201, y=125, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：徐小燕\n電話：02-2881 9471＃6732',
+            area=ImagemapArea(
+                x=387, y=125, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：黃慧琴\n電話：02-2881 9471＃6782',
+            area=ImagemapArea(
+                x=533, y=112, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：李瑞梅\n電話：02-2881 9471＃6842',
+            area=ImagemapArea(
+                x=698, y=126, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林淑靜\n電話：02-2881 9471＃6892',
+            area=ImagemapArea(
+                x=871, y=120, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林淑靜\n電話：02-2881 9471＃6892',
+            area=ImagemapArea(
+                x=26, y=219, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：郭葉瑋\n電話：02-2311 1531＃2511',
+            area=ImagemapArea(
+                x=204, y=230, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：郭葉瑋\n電話：02-2311 1531＃25113',
+            area=ImagemapArea(
+                x=367, y=217, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：郭葉瑋\n電話：02-2311 1531＃2511',
+            area=ImagemapArea(
+                x=538, y=241, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：郭葉瑋\n電話：02-2311 1531＃25113',
+            area=ImagemapArea(
+                x=706, y=239, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：郭葉瑋\n電話：02-2311 1531＃2511',
+            area=ImagemapArea(
+                x=869, y=235, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳玟君\n電話：02-2311 1531＃2891',
+            area=ImagemapArea(
+                x=28, y=341, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=206, y=347, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=373, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=522, y=345, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=691, y=351, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=867, y=352, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：林欣君\n電話：02-2311 1531＃2923',
+            area=ImagemapArea(
+                x=37, y=458, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：鄒淑芳\n電話：02-2311 1531＃2661',
+            area=ImagemapArea(
+                x=184, y=452, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：鄒淑芳\n電話：02-2311 1531＃2661',
+            area=ImagemapArea(
+                x=348, y=449, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：邱敏惠\n電話：02-2311 1531＃2591',
+            area=ImagemapArea(
+                x=510, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：莊明琪\n電話：02-2311 1531＃2601',
+            area=ImagemapArea(
+                x=687, y=462, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：呂鴻玲\n電話：02-2311 1531＃2701',
+            area=ImagemapArea(
+                x=863, y=450, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：沈靜芝\n電話：02-2311 1531＃2621',
+            area=ImagemapArea(
+                x=31, y=540, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：李雪真\n電話：02-2311 1531＃2801',
+            area=ImagemapArea(
+                x=204, y=552, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳姿吟\n電話：02-2881 9471＃59352',
+            area=ImagemapArea(
+                x=366, y=459, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：陳姿吟\n電話：02-2881 9471＃5935',
+            area=ImagemapArea(
+                x=533, y=546, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+            text='聯絡人：劉思怡\n電話：02-2881 9471＃6092',
+            area=ImagemapArea(
+                x=690, y=549, width=140, height=90
+                )
+            ),
+        MessageImagemapAction(
+             text='聯絡人：王治文\n電話： 02-2881 9471＃6463\nE-mail：amigo@scu.edu.tw',
+            area=ImagemapArea(
+                x=873, y=549, width=140, height=90
+            )
+           )
+         ]
+        )
+    ]    
+            
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        
+def 應修課程(event): 
+    try:
+        TextSendMessage(
+        text='◆查看「雙修輔系灌木」和「跨領域洞穴」應修課程：\n   http://www.scu.edu.tw/~curr/p3-2cos.htm\n◇查看「第二專長小溪」應修課程:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
+        )
+        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        
+def 申請條件(event): 
+    try:
+        TextSendMessage(
+        text='◆查看「雙修輔系灌木」和「跨領域洞穴」申請條件：\n   https://api.sys.scu.edu.tw/academic/\n◇查看「第二專長小溪」申請條件:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
+        )
+        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        
+def 本學期開課(event): 
+    try:
+        TextSendMessage(
+        text='◆查看「雙修輔系灌木」和「跨領域洞穴」本學期開課：\n   https://web.sys.scu.edu.tw/class40.asp?option=1\n◇查看「第二專長小溪」本學期開課: \n   https://course.sys.scu.edu.tw/currlist/SecExpQueryCls.aspx'
+        )
+        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
+
 
 
 
