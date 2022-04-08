@@ -101,8 +101,8 @@ def callback(request):
                                   text='第二專長小溪'
                                   ),
                                   MessageTemplateAction(  #顯示文字計息
-                                  label='我目前選不出來',
-                                  text='我目前選不出來'
+                                  label='目前選不出來',
+                                  text='目前選不出來'
                                   )
                                 ]
                                )
@@ -110,6 +110,21 @@ def callback(request):
                            ]
           
                             line_bot_api.reply_message(event.reply_token,message)
+            
+                    elif mtext == '雙修輔系灌木叢' or '跨域學程洞穴' or '第二專長小溪' or '目前選不出來' :
+                         message = [  #串列
+                                TextSendMessage(  
+                                text = '這樣啊！希望這個推薦對你有幫助...'
+                                ), 
+                                TextSendMessage(  
+                                text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的UCAN測驗果實和跨域紅蘿蔔配在一起享用，迸出同時符合發展目標和興趣的跨域簡餐，讓我們一起來試試吧！'
+                                ), 
+                                TextSendMessage(  
+                                text = "為了找到你在校務資料中心樹洞裡的測驗果實，請輸入你的學號～"
+                                )
+                              ]
+          
+                        line_bot_api.reply_message(event.reply_token,message)  
             
                     elif mtext == '先等等':
                         func.先不用(event)
