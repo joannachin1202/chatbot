@@ -58,6 +58,13 @@ def callback(request):
                     
                     elif mtext == '本學期開課':
                          func.本學期開課(event)
+                    
+                    elif mtext == '好呀！':
+                         func.提供關鍵詞(event)
+                         x+=1
+                    
+                    elif mtext == '先不用':
+                       line_bot_api.reply_message(event.reply_token,TextSendMessage(text='希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友，若你想了解更多跨域森林或各個蘿蔔坑的資訊，可以在下方的選單找森林裡的其他朋友了解相關功能喔！\n隨時歡迎你呼喊我的名字「小圖」，回來找我聊天喔～'))
                         
                     #要看 tem 有多長用 len（）
                     # 當長度是三時我
