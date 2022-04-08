@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError, LineBotApiError
-from linebot.models import MessageEvent, TextMessage , TextSendMessage
+from linebot.models import MessageEvent, TextMessage , TextSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction
 from module import func
 
 
@@ -123,8 +123,28 @@ def callback(request):
                                 ), 
                                 TextSendMessage( 
                                 text = output
+                                ),
+                                TemplateSendMessage(
+                                alt_text='重玩一次？',
+                                template=ConfirmTemplate(
+                                text='跨域森林很大，總共蘊含了六十個不同品種的紅蘿蔔，要不要讓我們再探索不同品種的紅蘿蔔呢？',  #主標題
+                                actions=[    
+                                MessageTemplateAction(  
+                                label='先不用', #按鈕文字
+                                text='先不用' #顯示文字計息  
+                                ),
+                                MessageTemplateAction(  #顯示文字計息
+                                label='好呀！',
+                                text='好呀！'
                                 )
-                              ]
+                     
+                               ]
+                             )
+                           )
+        
+                         ]
+          
+                        line_bot_api.reply_message(event.reply_token,message)
           
                         line_bot_api.reply_message(event.reply_token,message)
                    
