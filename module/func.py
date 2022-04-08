@@ -69,12 +69,15 @@ def 提供關鍵詞(event):
     try:
         message = [  #串列
             TextSendMessage(  
+            text = "٩(●ᴗ●)۶ 好的，那麼我們進入森林吧～"
+             ),
+            TextSendMessage(  
             text = "請你從下方兩個籃子中點選三個符合你興趣／發展方向的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
              ),
             ImagemapSendMessage(
             base_url= "https://imgur.com/qDsM6xm.png",
             alt_text='image 1',
-             base_size=BaseSize(width=1040, height=650),
+            base_size=BaseSize(width=1040, height=650),
       
        actions = [
        MessageImagemapAction(
@@ -473,8 +476,8 @@ def 關鍵字結果(event):
             text='第二專長小溪'
             ),
             MessageTemplateAction(  #顯示文字計息
-            label='我目前選不出來',
-            text='我目前選不出來'
+            label='目前選不出來',
+            text='目前選不出來'
             )
                      
            ]
@@ -600,10 +603,10 @@ def arrange_holland(file):
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
 
 def return_course(holland_code):
-  sec_spec = '第二專長小溪：'
-  cro_dom = '跨域學程洞穴：'
+  sec_spec = '🏞第二專長小溪：'
+  cro_dom = '🛕跨域學程洞穴：'
   aux_dep = '輔系：'
-  dou_maj = '雙輔系灌木叢：'
+  dou_maj = '🌳雙輔系灌木叢：'
 
   if len(holland_code) == 5:
     # 第二專長
@@ -611,42 +614,42 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 7:
+    if len(sec_spec) > 8:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 7:
+      if len(sec_spec) > 8:
         sec_spec = sec_spec[:-2]
       else:
         for key, value in sec_spec_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             sec_spec = sec_spec + key + ', '
-        if len(sec_spec) > 7:
+        if len(sec_spec) > 8:
           sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 7:
+    if len(cro_dom) > 8:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 7:
+      if len(cro_dom) > 8:
         cro_dom = cro_dom[:-2]
       else:
         for key, value in cro_dom_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             cro_dom = cro_dom + key + ', '
-        if len(cro_dom) > 7:
+        if len(cro_dom) > 8:
           cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
@@ -674,21 +677,21 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 7:
+    if len(dou_maj) > 8:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:3]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 7:
+      if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
       else:
         for key, value in dou_maj_rows.items():
           value = value.replace(" ","")
           if value.find(holland_code[:1]) == 0:
             dou_maj = dou_maj + key + ', '
-        if len(dou_maj) > 7:
+        if len(dou_maj) > 8:
           dou_maj = dou_maj[:-2]
   if len(holland_code) == 3:
     # 第二專長
@@ -696,28 +699,28 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 7:
+    if len(sec_spec) > 8:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 7:
+      if len(sec_spec) > 8:
         sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 7:
+    if len(cro_dom) > 8:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 7:
+      if len(cro_dom) > 8:
         cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
@@ -738,14 +741,14 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 7:
+    if len(dou_maj) > 8:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 7:
+      if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
   if len(holland_code) == 1:
     # 第二專長
@@ -753,56 +756,56 @@ def return_course(holland_code):
       value = value.replace(" ","")
       if value == holland_code:
         sec_spec = sec_spec + key + ', '
-    if len(sec_spec) > 7:
+    if len(sec_spec) > 8:
       sec_spec = sec_spec[:-2]
     else:
       for key, value in sec_spec_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           sec_spec = sec_spec + key + ', '
-      if len(sec_spec) > 7:
+      if len(sec_spec) > 8:
         sec_spec = sec_spec[:-2]
     # 跨領域學分學程
     for key, value in cro_dom_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         cro_dom = cro_dom + key + ', '
-    if len(cro_dom) > 7:
+    if len(cro_dom) > 8:
       cro_dom = cro_dom[:-2]
     else:
       for key, value in cro_dom_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           cro_dom = cro_dom + key + ', '
-      if len(cro_dom) > 7:
+      if len(cro_dom) > 8:
         cro_dom = cro_dom[:-2]
     # 輔系
     for key, value in aux_dep_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         aux_dep = aux_dep + key + ', '
-    if len(aux_dep) > 7:
+    if len(aux_dep) > 8:
       aux_dep = aux_dep[:-2]
     else:
       for key, value in aux_dep_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           aux_dep = aux_dep + key + ', '
-      if len(aux_dep) > 7:
+      if len(aux_dep) > 8:
         aux_dep = aux_dep[:-2]
     # 雙主修
     for key, value in dou_maj_rows.items():
       value = value.replace(" ","")
       if value == holland_code:
         dou_maj = dou_maj + key + ', '
-    if len(dou_maj) > 7:
+    if len(dou_maj) > 8:
       dou_maj = dou_maj[:-2]
     else:
       for key, value in dou_maj_rows.items():
         value = value.replace(" ","")
         if value.find(holland_code[:1]) == 0:
           dou_maj = dou_maj + key + ', '
-      if len(dou_maj) > 7:
+      if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
   return '但是根據你的果實，我可以為你推薦以下幾個擁有豐富營養素的地方：'+'\n'+'\n' +sec_spec + '\n' + cro_dom + '\n' + dou_maj
 
@@ -845,9 +848,9 @@ def get_connection(subject_ans,holand_ans):
     sec_spec = [i for i in sec_spec if i != '']
     cro_dom = [i for i in cro_dom if i != '']
  
-    aux = '雙輔系灌木叢：'
-    sec = '第二專長小溪：'
-    cro = '跨域學程洞穴：'
+    aux = '🌳雙輔系灌木叢：'
+    sec = '🏞第二專長小溪：'
+    cro = '🛕跨域學程洞穴：'
     if list(unique_everseen(duplicates(aux_dep))) != []:
       aux += list(unique_everseen(duplicates(aux_dep)))[0]
     if list(unique_everseen(duplicates(sec_spec))) != []:
