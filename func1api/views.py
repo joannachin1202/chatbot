@@ -10,6 +10,7 @@ from module import func
 
 from linebot.models import PostbackEvent
 from urllib.parse import parse_qsl
+import time
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
@@ -80,6 +81,7 @@ def callback(request):
                                 TextSendMessage(  
                                 text = 'yum yum～待我細細回想這滋味...'
                                 ), 
+                                time.sleep(5)
                                 TextSendMessage(  
                                 text = content
                                 ), 
