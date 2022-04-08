@@ -83,26 +83,38 @@ def callback(request):
                                 TextSendMessage(  
                                 text = content
                                 ), 
-                                TextSendMessage(  
-                                text = "快看！前面就是校務中心大榕樹了，聽說只要取得樹洞裡的UCAN測驗果實，再搭配先前從籃子中選取的跨域紅蘿蔔，就有機會找到整座森林中同時符合自身口味和興趣測驗結果的紅蘿蔔，讓我們一起來試試吧！"
-                                ),
-                                TextSendMessage(  
-                                text = "接下來將依據你最近一次透過UCAN平台進行職涯興趣測驗時，存放在校務資料中心樹洞裡的測驗果實來幫助你探索森林，請輸入你的學號讓我為你找出你的測驗果實吧～"
-                                )
-                     
-                              ]
+                                TemplateSendMessage(
+                                alt_text='選擇紅蘿蔔坑',
+                                template=ButtonsTemplate(
+                                text='在以上的推薦中，你覺得哪一區域的蘿蔔坑最符合你的發展目標或興趣呢？',  #主標題
+                                actions=[    
+                                  MessageTemplateAction(  
+                                  label='雙修輔系灌木叢', #按鈕文字
+                                  text='雙修輔系灌木叢' #顯示文字計息  
+                                  ),
+                                  MessageTemplateAction(  #顯示文字計息
+                                  label='跨域學程洞穴',
+                                  text='跨域學程洞穴'
+                                  ),
+                                  MessageTemplateAction(  #顯示文字計息
+                                  label='第二專長小溪',
+                                  text='第二專長小溪'
+                                  ),
+                                  MessageTemplateAction(  #顯示文字計息
+                                  label='我目前選不出來',
+                                  text='我目前選不出來'
+                                  )
+                                ]
+                               )
+                              )
+                           ]
           
                             line_bot_api.reply_message(event.reply_token,message)
             
                     elif mtext == '先等等':
                         func.先不用(event)
+                        
                     elif mtext == '出發囉':
-                        
-                        func.提供關鍵詞(event)
-                        x+=1
-                    
-                    elif mtext == '回跨域紅蘿蔔':
-                        
                         func.提供關鍵詞(event)
                         x+=1
                     
@@ -153,7 +165,7 @@ def callback(request):
           
                         line_bot_api.reply_message(event.reply_token,message)
           
-                        line_bot_api.reply_message(event.reply_token,message)
+                       
                    
                   
             
