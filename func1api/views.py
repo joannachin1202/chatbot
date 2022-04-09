@@ -137,7 +137,7 @@ def callback(request):
                         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=output))     
     
                 
-                    elif mtext in student_id:
+                     elif mtext in student_id:
                         rows = func.arrange_data('number1.csv')
                         stu_id_intersection = mtext
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
@@ -146,7 +146,39 @@ def callback(request):
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         output=func.get_connection(subject_ans,holand_ans)
                         
-                        message = [  #串列
+                        if output== '' :
+                           message = [  #串列
+                                 TextSendMessage(  
+                                 text = '但我試吃了一下你的跨域簡餐，發現這兩個味道相差太大了，實在不能配在一起享用，因此無法提供給你，很抱歉！'
+                                 ), 
+                                 TextSendMessage( 
+                                 text = holand_ans
+                                 ),
+                                 TemplateSendMessage(
+                                 alt_text='重玩一次？',
+                                 template=ConfirmTemplate(
+                                 text='跨域森林很大，總共蘊含了六十個不同品種的紅蘿蔔，要不要讓我們再探索不同品種的紅蘿蔔呢？',  #主標題
+                                 actions=[    
+                                 MessageTemplateAction(  
+                                 label='先不用', #按鈕文字
+                                 text='先不用' #顯示文字計息  
+                                 ),
+                                 MessageTemplateAction(  #顯示文字計息
+                                 label='好呀！',
+                                 text='好呀！'
+                                 )
+                      
+                                ]
+                              )
+                            )
+         
+                          ]
+           
+                           line_bot_api.reply_message(event.reply_token,message)
+                            
+                        else:  
+                            
+                           message = [  #串列
                                 TextSendMessage(  
                                 text = '感謝你！\n我在樹洞裡找到了與你學號相對應的測驗果實~'
                                 ), 
@@ -174,7 +206,6 @@ def callback(request):
                          ]
           
                         line_bot_api.reply_message(event.reply_token,message)
-          
                        
                    
                   
