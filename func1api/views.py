@@ -46,6 +46,7 @@ def callback(request):
                     
                     
                     if mtext == list: #希望調整成只要輸入任意文字都會回覆
+                       func.begin(event) 
                      
                     elif mtext == '承辦人員資訊':
                          func.聯絡人資訊(event)
