@@ -18,7 +18,7 @@ parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
 x=0
 tem=[]
 student_id=list(func.arrange_data('number1.csv'))
-
+list = ["兔子", "兔", "小兔",'小兔子','rabbit' ]
 @csrf_exempt
 def callback(request):
     global x
@@ -45,9 +45,8 @@ def callback(request):
                     mtext = event.message.text
                     
                     
-                    if mtext == '兔子': #希望調整成只要輸入任意文字都會回覆
-                        func.begin(event)  
-                        
+                    if mtext == list: #希望調整成只要輸入任意文字都會回覆
+                     
                     elif mtext == '承辦人員資訊':
                          func.聯絡人資訊(event)
                     
