@@ -81,7 +81,6 @@ def callback(request):
                                 TextSendMessage(  
                                 text = 'yum yum～待我細細回想這滋味...'
                                 ), 
-                                time.sleep(5),
                                 TextSendMessage(  
                                 text = content
                                 ), 
