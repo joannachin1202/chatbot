@@ -874,8 +874,13 @@ def get_connection(subject_ans,holand_ans):
       sec += list(unique_everseen(duplicates(sec_spec)))[0]
     if list(unique_everseen(duplicates(cro_dom))) != []:
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
-
+    
+    if (aux.split('：')[1] != '') or (sec.split('：')[1] != '') or (cro.split('：')[1] != ''):
     return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n' + '\n'+ aux + '\n' + sec + '\n' + cro
+    else:
+    return ''
+
+    
 
 
 def 聯絡人資訊(event):  
