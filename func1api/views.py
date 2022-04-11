@@ -45,7 +45,7 @@ def callback(request):
                     mtext = event.message.text
                     
                     
-                    if mtext == "兔子" or "兔", mtext == "小兔"or mtext == '小兔子'or mtext =='rabbit': #希望調整成只要輸入任意文字都會回覆
+                    if mtext == "兔子" or mtext == "兔" or mtext == "小兔" or mtext == '小兔子' or mtext =='rabbit': #希望調整成只要輸入任意文字都會回覆
                        func.begin(event) 
                      
                     elif mtext == '承辦人員資訊':
