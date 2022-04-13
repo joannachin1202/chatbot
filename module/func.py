@@ -886,7 +886,152 @@ def get_connection(subject_ans,holand_ans):
 def 聯絡人資訊(event):  
     try:
         message = [  #串列
-            
+            ImagemapSendMessage(
+            base_url= "https://imgur.com/SCqhhaM.png",
+            alt_text='雙輔系聯絡人',
+            base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+       URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/chinese/dept_member/3374',
+            area=ImagemapArea(
+                x=12, y=125, width=160, height=70
+               )
+            ),
+        URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/history/teacher_resume/5234',
+            area=ImagemapArea(
+                x=226, y=109, width=160, height=70
+              )
+            ),
+        URIImagemapAction(
+             link_uri='https://web-ch.scu.edu.tw/philos/dept_member/5986',
+            area=ImagemapArea(
+                x=445, y=117, width=160, height=70
+                )
+            ),
+        URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/politics/dept_member/7895',
+            area=ImagemapArea(
+                x=667, y=109, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/society/dept_member/375',
+            area=ImagemapArea(
+                x=867, y=107, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/sw/dept_member/3535',
+            area=ImagemapArea(
+                x=6, y=234, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://english.scu.edu.tw/?page_id=2267',
+            area=ImagemapArea(
+                x=246, y=230, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/japanese/dept_member/3883',
+            area=ImagemapArea(
+                x=449, y=230, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/deutsch/staff/6037',
+            area=ImagemapArea(
+                x=663, y=238, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/math/dept_member/561',
+            area=ImagemapArea(
+                x=875, y=226, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://www.phys.scu.edu.tw/index.php/zh-tw/page-menuitem-staff-assistant',
+            area=ImagemapArea(
+                x=18, y=339, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/chem/dept_member/11459',
+            area=ImagemapArea(
+                x=248, y=331, width=160, height=70
+                )
+            ),
+        URIImagemapAction(
+            link_uri='https://microbiology.scu.edu.tw/nexus/content/%E7%B3%BB%E8%BE%A6%E5%85%AC%E5%AE%A4',
+            area=ImagemapArea(
+                x=453, y=333, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/psy/dept_member/3986',
+            area=ImagemapArea(
+                x=665, y=349, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/law/staff/5357',
+            area=ImagemapArea(
+                x=881, y=345, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/econ/dept_member/5274',
+            area=ImagemapArea(
+                x=18, y=456, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_urit='https://web-ch.scu.edu.tw/acc/dept_member/4226',
+            area=ImagemapArea(
+                x=238, y=439, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://www.ba.scu.edu.tw/zh-hant/administration',
+            area=ImagemapArea(
+                x=435, y=443, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/index.php/ibsu/web_page/12009',
+            area=ImagemapArea(
+                x=669, y=443, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://www.feam.scu.edu.tw/faculty/6',
+            area=ImagemapArea(
+                x=863, y=435, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='http://www.csim.scu.edu.tw/teacher_list.aspx?c=TEACHER&cid=3',
+            area=ImagemapArea(
+                x=112, y=562, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/music/dept_member/3615',
+            area=ImagemapArea(
+                x=424, y=550, width=160, height=70
+                )
+            ),
+         URIImagemapAction(
+            link_uri='https://bigdata.scu.edu.tw/team/#executive-lineup',
+            area=ImagemapArea(
+                x=729, y=554, width=160, height=70
+                )
+            )            
+         ],
+        ),    
          ImagemapSendMessage(
         base_url= "https://imgur.com/pFsJhb8.png",
         alt_text='學程＆第二專長聯絡人',
