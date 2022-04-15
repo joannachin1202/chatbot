@@ -602,7 +602,7 @@ def arrange_holland(file):
   cross_domain_rows = {}
   auxiliary_department_rows = {}
   double_major_rows = {}
-  with open(file, "r", encoding="big5") as fp:
+  with open(file, "r", encoding="utf-8") as fp:
     csvreader = csv.reader(fp)
     header = next(csvreader)
     for row in csvreader:
