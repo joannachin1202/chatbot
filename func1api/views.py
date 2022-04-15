@@ -202,14 +202,14 @@ def callback(request):
                                 label='好呀！',
                                 text='好呀！'
                                 )
-                     
-                               ]
-                             )
-                           )
-        
-                         ]
-          
-                         line_bot_api.reply_message(event.reply_token,message)
+                      
+                                ]
+                              )
+                            )
+         
+                          ]
+           
+                           line_bot_api.reply_message(event.reply_token,message)
                        
                    
                   
