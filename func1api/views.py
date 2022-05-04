@@ -1,4 +1,5 @@
 from django.conf import settings
+from pathlib import Path
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 
@@ -14,11 +15,11 @@ import time
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 x=0
 tem=[]
-student_id=list(func.arrange_data('number1.csv'))
-list = ["兔子", "兔", "小兔",'小兔子','rabbit' ]
+student_id=list(func.arrange_data(BASE_DIR /'number1.csv'))
 @csrf_exempt
 def callback(request):
     global x
@@ -27,7 +28,7 @@ def callback(request):
     global rows
     global text_intersection
     global stu_id_intersection
-    
+ 
     if request.method == 'POST':
         message=[]
         signature = request.META['HTTP_X_LINE_SIGNATURE']
@@ -61,17 +62,62 @@ def callback(request):
                          func.本學期開課(event)
                     
                     elif mtext == '好呀！':
-                         func.提供關鍵詞(event)
+                         func.小圖(event)
                          x+=1
                         
                     elif mtext == '小圖':
-                         func.提供關鍵詞(event)
+                         func.小圖(event)
                          x+=1
                     
                     elif mtext == '先不用':
-                       line_bot_api.reply_message(event.reply_token,TextSendMessage(text='希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友，若你想了解更多跨域森林或各個蘿蔔坑的資訊，可以在下方的選單找森林裡的其他朋友了解相關功能喔！\n隨時歡迎你呼喊我的名字「小圖」，回來找我聊天喔～'))
+                        message = [  #串列
+                                 TextSendMessage(  
+                                 text = '希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n\n謝謝你願意和我聊天當朋友,若你想更加了解跨域森林或各個蘿蔔坑,可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
+                                 ),
+                                 TextSendMessage( 
+                                 text = '如果在小圖帶領探索森林時，你曾經有過困難和疑惑，或是希望小圖再改進的地方，歡迎你透過你透過以下連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8 '
+                                 ),
+                                 TextSendMessage( 
+                                 text = '隨時歡迎你打字呼叫我的名字「小圖」,回來再選一次紅蘿蔔，一起探索森林更多樣貌喔～'
+                                 )
+                                ]
                         
-                    #要看 tem 有多長用 len（）
+                        line_bot_api.reply_message(event.reply_token,message)
+                       
+                    
+                    elif mtext == '我在「通關密語」':
+                       line_bot_api.reply_message(event.reply_token,TextSendMessage(text='小圖是一隻「兔子」呦！\n請你試試看在訊息欄打字發送「兔子」~')) 
+                   
+                    elif mtext == '我在「輸入學號」找果實':
+                        message = [  #串列
+                                 TextSendMessage(  
+                                 text = '感謝你！\n但很抱歉，樹洞裡沒有你的測驗果實，可能因為你沒有做過測驗，因此無法製作跨域簡餐 (⋟_⋞)'
+                                 ),
+                                 TemplateSendMessage(
+                                 alt_text='重玩一次？',
+                                 template=ConfirmTemplate(
+                                 text='跨域森林很大，總共蘊含了六十個不同品種的紅蘿蔔，要不要讓我們再探索不同品種的紅蘿蔔呢？',  #主標題
+                                 actions=[    
+                                 MessageTemplateAction(  
+                                 label='先不用', #按鈕文字
+                                 text='先不用' #顯示文字計息  
+                                 ),
+                                 MessageTemplateAction(  #顯示文字計息
+                                 label='好呀！',
+                                 text='好呀！'
+                                 )
+                      
+                                ]
+                              )
+                            )
+         
+                          ]
+           
+                        line_bot_api.reply_message(event.reply_token,message)
+                   
+                    elif mtext == '我不知道我在哪':
+                       line_bot_api.reply_message(event.reply_token,TextSendMessage(text='走失了嗎？\n呼喊我的名字「小圖」，我會馬上把你帶回森林入口哦！\n\n還是你遇到困難或疑惑呢？\n透過以下連結到表單內留言給小圖發生了什麼事吧！\n\nhttps://forms.gle/P6d5bkAzjy31tLSp8')) 
+                   #要看 tem 有多長用 len（）
                     # 當長度是三時我
                     elif x==1:
                         tem.append(mtext)
@@ -134,7 +180,7 @@ def callback(request):
                     
                     elif mtext == '交集':
                         subject_ans = func.subject(text_intersection)
-                        rows = func.arrange_data('number1.csv') 
+                        rows = func.arrange_data(BASE_DIR /'number1.csv') 
                         
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         output=func.get_connection(subject_ans,holand_ans)
@@ -142,7 +188,7 @@ def callback(request):
     
                 
                     elif mtext in student_id:
-                        rows = func.arrange_data('number1.csv')
+                        rows = func.arrange_data(BASE_DIR /'number1.csv')
                         stu_id_intersection = mtext
                         holand=func.return_course(func.get_quiz_results(mtext,rows))
                         
@@ -153,7 +199,7 @@ def callback(request):
                         if output== '' :
                            message = [  #串列
                                  TextSendMessage(  
-                                 text = '但我試吃了一下你的跨域簡餐，發現這兩個味道相差太大了，實在不能配在一起享用，因此無法提供給你，很抱歉！'
+                                 text = '但我試吃了一下你的跨域簡餐，發現這兩個味道相差太大了，實在不能配在一起享用，因此無法提供給你同時符合你挑選的紅蘿蔔和職涯測驗結果的推薦，很抱歉！'
                                  ), 
                                  TextSendMessage( 
                                  text = holand_ans
@@ -184,7 +230,7 @@ def callback(request):
                             
                            message = [  #串列
                                 TextSendMessage(  
-                                text = '感謝你！\n我在樹洞裡找到了與你學號相對應的測驗果實~'
+                                text = '謝謝！找到你的測驗果實了～'
                                 ), 
                                 TextSendMessage( 
                                 text = output
@@ -210,6 +256,10 @@ def callback(request):
                           ]
            
                            line_bot_api.reply_message(event.reply_token,message)
+                    else:
+                      func.錯誤訊息(event)
+                        
+                      
                        
                    
                   
