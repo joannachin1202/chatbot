@@ -3,7 +3,7 @@ from django.conf import settings
 from linebot import LineBotApi
 
 from linebot.models import TextSendMessage
-
+from pathlib import Path
 
 from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
 from linebot.models import ImagemapSendMessage, BaseSize, ImagemapAction, ImagemapArea, MessageImagemapAction, URIImagemapAction
@@ -17,6 +17,7 @@ import time
 
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def begin(event):  #多項傳送
     try:
@@ -53,7 +54,7 @@ def 先不用(event):
     try:
         message = [
         TextSendMessage(
-        text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你以下透過連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8'
+        text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你透過以下連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8'
         ),
         TextSendMessage(  
         text = "當你準備好探索森林時，歡迎你隨時呼喊我的名字「小圖」,回來找我一起玩喔~"
@@ -72,7 +73,397 @@ def 提供關鍵詞(event):
             text = "٩(●ᴗ●)۶ 好的，那麼我們進入森林吧～"
              ),
             TextSendMessage(  
-            text = "請你從下方兩個籃子中點選三個符合你興趣／發展方向的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
+            text = "如果你在探索過程中走失了，不知道該怎麼做的話，只要打字呼喚我的名字「小圖」,我會馬上把你帶回森林入口哦！"
+             ),
+            TextSendMessage(  
+            text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
+             ),
+            ImagemapSendMessage(
+            base_url= "https://imgur.com/qDsM6xm.png",
+            alt_text='image 1',
+            base_size=BaseSize(width=1040, height=650),
+      
+       actions = [
+       MessageImagemapAction(
+            text='中文',
+            area=ImagemapArea(
+                x=49, y=52, width=160, height=70
+               )
+            ),
+        MessageImagemapAction(
+            text='歷史',
+            area=ImagemapArea(
+                x=53, y=154, width=160, height=70
+              )
+            ),
+        MessageImagemapAction(
+             text='哲學',
+            area=ImagemapArea(
+                x=49, y=258, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='政治',
+            area=ImagemapArea(
+                x=52, y=360, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='社會',
+            area=ImagemapArea(
+                x=51, y=453, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='社工',
+            area=ImagemapArea(
+                x=43, y=555, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='英文',
+            area=ImagemapArea(
+                x=248, y=350, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='物理',
+            area=ImagemapArea(
+                x=249, y=547, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='數學',
+            area=ImagemapArea(
+                x=247, y=449, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='德文',
+            area=ImagemapArea(
+                x=246, y=252, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='日文',
+            area=ImagemapArea(
+                x=246, y=154, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='音樂',
+            area=ImagemapArea(
+                x=248, y=54, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='微生物',
+            area=ImagemapArea(
+                x=441, y=149, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='心理',
+            area=ImagemapArea(
+                x=440, y=252, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='法律',
+            area=ImagemapArea(
+                x=439, y=352, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='經濟',
+            area=ImagemapArea(
+                x=445, y=449, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+             text='會計',
+            area=ImagemapArea(
+                x=438, y=541, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='企管',
+            area=ImagemapArea(
+                x=628, y=59, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='經營',
+            area=ImagemapArea(
+                x=832, y=47, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='管理',
+            area=ImagemapArea(
+                x=639, y=540, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+             text='資科',
+            area=ImagemapArea(
+                x=641, y=459, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+             text='資管',
+            area=ImagemapArea(
+                x=635, y=351, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='財精',
+            area=ImagemapArea(
+                x=634, y=251, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='國貿',
+            area=ImagemapArea(
+                x=635, y=148, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='創意/創作',
+            area=ImagemapArea(
+                x=831, y=152, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='人文',
+            area=ImagemapArea(
+                x=834, y=258, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='非營利組織',
+            area=ImagemapArea(
+                x=833, y=357, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='東亞',
+            area=ImagemapArea(
+                x=837, y=453, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+            text='全英語',
+            area=ImagemapArea(
+                x=840, y=546, width=160, height=70
+                )
+            ),
+         MessageImagemapAction(
+             text='化學',
+            area=ImagemapArea(
+                x=442, y=48, width=160, height=70
+            )
+           )
+         ],
+        ),
+            ImagemapSendMessage(
+            base_url= "https://imgur.com/cgOUHGo.png",
+            alt_text='關鍵詞表2',
+      base_size=BaseSize(width=1040, height=650),
+      actions=[
+        MessageImagemapAction(
+            text='財經',
+            area=ImagemapArea(
+                x=43, y=51, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='科技',
+            area=ImagemapArea(
+                x=45, y=164, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='中國',
+            area=ImagemapArea(
+                x=48, y=261, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='幸福',
+            area=ImagemapArea(
+                x=48, y=361, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='在地',
+            area=ImagemapArea(
+                x=47, y=453, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='創新',
+            area=ImagemapArea(
+                x=49, y=555, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='永續',
+            area=ImagemapArea(
+                x=245, y=559, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='影視',
+            area=ImagemapArea(
+                x=239, y=459, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='台灣',
+            area=ImagemapArea(
+                x=235, y=353, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='人權',
+            area=ImagemapArea(
+                x=244, y=252, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='經典',
+            area=ImagemapArea(
+                x=244, y=159, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='美學',
+            area=ImagemapArea(
+                x=246, y=52, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='推理',
+            area=ImagemapArea(
+                x=443, y=52, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='領導',
+            area=ImagemapArea(
+                x=441, y=144, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='決策',
+            area=ImagemapArea(
+                x=444, y=251, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='分析',
+            area=ImagemapArea(
+                x=439, y=348, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='公共治理',
+            area=ImagemapArea(
+                x=445, y=449, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='韓文',
+            area=ImagemapArea(
+                x=435, y=545, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='高齡',
+            area=ImagemapArea(
+                x=635, y=545, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='行為',
+            area=ImagemapArea(
+                x=633, y=459, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='健康生活',
+            area=ImagemapArea(
+                x=635, y=345, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='線性代數',
+            area=ImagemapArea(
+                x=630, y=252, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='翻譯',
+            area=ImagemapArea(
+                x=633, y=151, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='文化',
+            area=ImagemapArea(
+                x=626, y=54, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='外交領事',
+            area=ImagemapArea(
+                x=833, y=54, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='行政',
+            area=ImagemapArea(
+                x=839, y=153, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='商務',
+            area=ImagemapArea(
+                x=833, y=256, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='地政/地產',
+            area=ImagemapArea(
+                x=830, y=356, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+            text='行銷',
+            area=ImagemapArea(
+                x=834, y=451, width=160, height=70
+                )
+            ),
+        MessageImagemapAction(
+             text='理財',
+            area=ImagemapArea(
+                x=834, y=548, width=160, height=70
+                     )
+                )
+
+            ]
+        )
+    ]   
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
+def 小圖(event):  
+    try:
+        message = [  #串列
+            TextSendMessage(  
+            text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
              ),
             ImagemapSendMessage(
             base_url= "https://imgur.com/qDsM6xm.png",
@@ -495,10 +886,10 @@ def 輸學號(event):
         text = '這樣啊！希望這個推薦對你有幫助...'
         ), 
         TextSendMessage(  
-        text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的UCAN測驗果實和跨域紅蘿蔔配在一起享用，迸出同時符合發展目標和興趣的跨域簡餐，讓我們一起來試試吧！'
+        text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的「職涯測驗果實」和「跨域紅蘿蔔」配在一起享用，迸出同時符合發展目標和興趣的跨域簡餐，讓我們一起來試試吧！'
         ), 
         TextSendMessage(  
-        text = "為了找到你在校務資料中心樹洞裡的測驗果實，請輸入你的學號～"
+        text = "為了找到你入學時做過的職涯興趣測驗結果，請輸入你的學號～"
         )
     ]
         line_bot_api.reply_message(event.reply_token,message)
@@ -507,7 +898,7 @@ def 輸學號(event):
 
         
 def subject(array):
-    data = pd.read_excel('關鍵詞表.xlsx',sheet_name="關鍵詞表(推薦)")
+    data = pd.read_excel(BASE_DIR / 'Keywords.xlsx',sheet_name="關鍵詞表(推薦)")
     keyword, deparment, cross_field, second_specialty=data["關鍵字"].tolist(), data["科系"].tolist(), data["跨領域"].tolist(), data["第二專長"].tolist()
     
     data_dict={}
@@ -573,7 +964,7 @@ def subject(array):
     else:
         pass
     
-    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
+    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！\n（以下隨機排序）'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
     
@@ -617,7 +1008,7 @@ def arrange_holland(file):
 
   return second_specialty_rows,cross_domain_rows,auxiliary_department_rows,double_major_rows
 
-sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland('Holland .csv')
+sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland(BASE_DIR /'Holland .csv')
 
 def return_course(holland_code):
   sec_spec = '🏞第二專長小溪：'
@@ -824,7 +1215,7 @@ def return_course(holland_code):
           dou_maj = dou_maj + key + ', '
       if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
-  return '但是根據你的果實，我可以為你推薦以下幾個擁有豐富營養素的地方：'+'\n'+'\n' +sec_spec + '\n' + cro_dom + '\n' + dou_maj
+  return '但是根據你的果實，我可以為你推薦以下幾個擁有豐富營養素的地方：\n（以下隨機排序）'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
@@ -876,12 +1267,39 @@ def get_connection(subject_ans,holand_ans):
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
     
     if (aux.split('：')[1] != '') or (sec.split('：')[1] != '') or (cro.split('：')[1] != ''):
-        return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n' + '\n'+ aux + '\n' + sec + '\n' + cro
+        return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n（以下隨機排序）\n' + '\n'+ aux + '\n' + cro + '\n' + sec
     else:
         return ''
 
-    
-
+def 錯誤訊息(event):  
+    try:
+        message = [  #串列
+            TemplateSendMessage(
+            alt_text='發生錯誤',
+            template=ButtonsTemplate(
+            title='(◞‸◟) 登愣！',
+            text='如輸入錯誤，可直接重新輸入；確定輸入無誤，請告訴小圖你的座標位置',  #主標題
+            actions=[    
+            MessageTemplateAction(  
+            label='我在「通關密語」', #按鈕文字
+            text='我在「通關密語」' #顯示文字計息  
+            ),
+            MessageTemplateAction(  #顯示文字計息
+            label='我在「輸入學號」找果實',
+            text='我在「輸入學號」找果實'
+            ),
+            MessageTemplateAction(  
+            label='我不知道我在哪', #按鈕文字
+            text='我不知道我在哪' #顯示文字計息  
+            )
+                     
+           ]
+         )
+        )
+    ]
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
 def 聯絡人資訊(event):  
     try:
@@ -891,13 +1309,14 @@ def 聯絡人資訊(event):
             alt_text='雙輔系聯絡人',
             base_size=BaseSize(width=1040, height=650),
       
-       actions = [
-       URIImagemapAction(
-            link_uri='https://web-ch.scu.edu.tw/chinese/dept_member/3374',
-            area=ImagemapArea(
-                x=12, y=125, width=160, height=70
-               )
-            ),
+            actions = [
+               URIImagemapAction(
+               link_uri='https://web-ch.scu.edu.tw/chinese/dept_member/3374',
+                area=ImagemapArea(
+                   x=12, y=125, width=160, height=70
+                  
+                )
+               ),
         URIImagemapAction(
             link_uri='https://web-ch.scu.edu.tw/index.php/history/teacher_resume/5234',
             area=ImagemapArea(
@@ -968,7 +1387,8 @@ def 聯絡人資訊(event):
             link_uri='https://microbiology.scu.edu.tw/nexus/content/%E7%B3%BB%E8%BE%A6%E5%85%AC%E5%AE%A4',
             area=ImagemapArea(
                 x=453, y=333, width=160, height=70
-                )
+               
+              )
             ),
          URIImagemapAction(
             link_uri='https://web-ch.scu.edu.tw/index.php/psy/dept_member/3986',
@@ -979,17 +1399,17 @@ def 聯絡人資訊(event):
          URIImagemapAction(
             link_uri='https://web-ch.scu.edu.tw/index.php/law/staff/5357',
             area=ImagemapArea(
-                x=881, y=345, width=160, height=70
-                )
+                x=881, y=345, width=160, height=70   
+               )
             ),
          URIImagemapAction(
             link_uri='https://web-ch.scu.edu.tw/econ/dept_member/5274',
             area=ImagemapArea(
                 x=18, y=456, width=160, height=70
-                )
+              )
             ),
-         URIImagemapAction(
-            link_urit='https://web-ch.scu.edu.tw/acc/dept_member/4226',
+          URIImagemapAction(
+            link_uri='https://web-ch.scu.edu.tw/acc/dept_member/4226',
             area=ImagemapArea(
                 x=238, y=439, width=160, height=70
                 )
@@ -998,7 +1418,7 @@ def 聯絡人資訊(event):
             link_uri='https://www.ba.scu.edu.tw/zh-hant/administration',
             area=ImagemapArea(
                 x=435, y=443, width=160, height=70
-                )
+          )
             ),
          URIImagemapAction(
             link_uri='https://web-ch.scu.edu.tw/index.php/ibsu/web_page/12009',
@@ -1028,8 +1448,11 @@ def 聯絡人資訊(event):
             link_uri='https://bigdata.scu.edu.tw/team/#executive-lineup',
             area=ImagemapArea(
                 x=729, y=554, width=160, height=70
+        
+               
                 )
             )            
+               
          ],
         ),    
          ImagemapSendMessage(
@@ -1457,3 +1880,6 @@ def 本學期開課(event):
 
     
        
+
+
+    
