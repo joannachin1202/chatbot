@@ -79,7 +79,7 @@ def 提供關鍵詞(event):
             text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
              ),
             ImagemapSendMessage(
-            base_url= "https://imgur.com/qDsM6xm.png",
+            base_url= "https://imgur.com/pqVJAli.png",
             alt_text='image 1',
             base_size=BaseSize(width=1040, height=650),
       
@@ -91,175 +91,175 @@ def 提供關鍵詞(event):
                )
             ),
         MessageImagemapAction(
-            text='歷史',
+            text='創意/創作',
             area=ImagemapArea(
                 x=53, y=154, width=160, height=70
               )
             ),
         MessageImagemapAction(
-             text='哲學',
+             text='人文',
             area=ImagemapArea(
                 x=49, y=258, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='政治',
+            text='經典',
             area=ImagemapArea(
                 x=52, y=360, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='社會',
+            text='歷史',
             area=ImagemapArea(
                 x=51, y=453, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='社工',
+            text='文化',
             area=ImagemapArea(
                 x=43, y=555, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='英文',
+            text='東亞',
             area=ImagemapArea(
-                x=248, y=350, width=160, height=70
+                x=235, y=350, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='物理',
+            text='人權',
             area=ImagemapArea(
-                x=249, y=547, width=160, height=70
+                x=249, y=553, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='數學',
+            text='中國',
             area=ImagemapArea(
-                x=247, y=449, width=160, height=70
+                x=247, y=457, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='德文',
+            text='台灣',
             area=ImagemapArea(
                 x=246, y=252, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='日文',
+            text='在地',
             area=ImagemapArea(
                 x=246, y=154, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='音樂',
+            text='幸福',
             area=ImagemapArea(
                 x=248, y=54, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='微生物',
+            text='社會',
             area=ImagemapArea(
                 x=441, y=149, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='心理',
+            text='非營利組織',
             area=ImagemapArea(
                 x=440, y=252, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='法律',
+            text='公共治理',
             area=ImagemapArea(
                 x=439, y=352, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='經濟',
+            text='社工',
             area=ImagemapArea(
                 x=445, y=449, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='會計',
+             text='高齡',
             area=ImagemapArea(
                 x=438, y=541, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='企管',
+            text='健康生活',
             area=ImagemapArea(
                 x=628, y=59, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='經營',
+            text='美學',
             area=ImagemapArea(
                 x=832, y=47, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='管理',
+            text='音樂',
             area=ImagemapArea(
                 x=639, y=540, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='資科',
+             text='推理',
             area=ImagemapArea(
                 x=641, y=459, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='資管',
+             text='哲學',
             area=ImagemapArea(
                 x=635, y=351, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='財精',
+            text='外交領事',
             area=ImagemapArea(
                 x=634, y=251, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='國貿',
+            text='法律',
             area=ImagemapArea(
                 x=635, y=148, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='創意/創作',
+            text='英文',
             area=ImagemapArea(
                 x=831, y=152, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='人文',
+            text='韓文',
             area=ImagemapArea(
                 x=834, y=258, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='非營利組織',
+            text='日文',
             area=ImagemapArea(
                 x=833, y=357, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='東亞',
+            text='德文',
             area=ImagemapArea(
                 x=837, y=453, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='全英語',
+            text='翻譯',
             area=ImagemapArea(
                 x=840, y=546, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='化學',
+             text='政治',
             area=ImagemapArea(
                 x=442, y=48, width=160, height=70
             )
@@ -267,84 +267,84 @@ def 提供關鍵詞(event):
          ],
         ),
             ImagemapSendMessage(
-            base_url= "https://imgur.com/cgOUHGo.png",
+            base_url= "https://imgur.com/D87WWaX.png",
             alt_text='關鍵詞表2',
       base_size=BaseSize(width=1040, height=650),
       actions=[
         MessageImagemapAction(
-            text='財經',
+            text='全英語',
             area=ImagemapArea(
                 x=43, y=51, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='科技',
+            text='心理',
             area=ImagemapArea(
                 x=45, y=164, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='中國',
+             text='行為',
             area=ImagemapArea(
                 x=48, y=261, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='幸福',
+            text='微生物',
             area=ImagemapArea(
                 x=48, y=361, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='在地',
+            text='化學',
             area=ImagemapArea(
                 x=47, y=453, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='創新',
+            text='物理',
             area=ImagemapArea(
                 x=49, y=555, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='永續',
+            text='科技',
             area=ImagemapArea(
                 x=245, y=559, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='影視',
+            text='資科',
             area=ImagemapArea(
                 x=239, y=459, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='台灣',
+            text='分析',
             area=ImagemapArea(
                 x=235, y=353, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='人權',
+            text='線性代數',
             area=ImagemapArea(
                 x=244, y=252, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='經典',
+            text='數學',
             area=ImagemapArea(
                 x=244, y=159, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='美學',
+            text='創新',
             area=ImagemapArea(
                 x=246, y=52, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='推理',
+            text='資管',
             area=ImagemapArea(
                 x=443, y=52, width=160, height=70
                 )
@@ -362,91 +362,91 @@ def 提供關鍵詞(event):
                 )
             ),
         MessageImagemapAction(
-            text='分析',
+            text='管理',
             area=ImagemapArea(
                 x=439, y=348, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='公共治理',
+             text='企管',
             area=ImagemapArea(
                 x=445, y=449, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='韓文',
+            text='永續',
             area=ImagemapArea(
                 x=435, y=545, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='高齡',
+            text='財精',
             area=ImagemapArea(
                 x=635, y=545, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行為',
+            text='經濟',
             area=ImagemapArea(
                 x=633, y=459, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='健康生活',
+             text='影視',
             area=ImagemapArea(
                 x=635, y=345, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='線性代數',
+             text='行銷',
             area=ImagemapArea(
                 x=630, y=252, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='翻譯',
+            text='經營',
             area=ImagemapArea(
                 x=633, y=151, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='文化',
+             text='國貿',
             area=ImagemapArea(
                 x=626, y=54, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='外交領事',
+             text='理財',
             area=ImagemapArea(
                 x=833, y=54, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行政',
+            text='財經',
             area=ImagemapArea(
                 x=839, y=153, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='商務',
+            text='會計',
             area=ImagemapArea(
                 x=833, y=256, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='地政/地產',
+            text='商務',
             area=ImagemapArea(
                 x=830, y=356, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行銷',
+            text='行政',
             area=ImagemapArea(
                 x=834, y=451, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='理財',
+             text='地政/地產',
             area=ImagemapArea(
                 x=834, y=548, width=160, height=70
                      )
@@ -465,8 +465,8 @@ def 小圖(event):
             TextSendMessage(  
             text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
              ),
-            ImagemapSendMessage(
-            base_url= "https://imgur.com/qDsM6xm.png",
+             ImagemapSendMessage(
+            base_url= "https://imgur.com/pqVJAli.png",
             alt_text='image 1',
             base_size=BaseSize(width=1040, height=650),
       
@@ -478,175 +478,175 @@ def 小圖(event):
                )
             ),
         MessageImagemapAction(
-            text='歷史',
+            text='創意/創作',
             area=ImagemapArea(
                 x=53, y=154, width=160, height=70
               )
             ),
         MessageImagemapAction(
-             text='哲學',
+             text='人文',
             area=ImagemapArea(
                 x=49, y=258, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='政治',
+            text='經典',
             area=ImagemapArea(
                 x=52, y=360, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='社會',
+            text='歷史',
             area=ImagemapArea(
                 x=51, y=453, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='社工',
+            text='文化',
             area=ImagemapArea(
                 x=43, y=555, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='英文',
+            text='東亞',
             area=ImagemapArea(
-                x=248, y=350, width=160, height=70
+                x=235, y=350, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='物理',
+            text='人權',
             area=ImagemapArea(
-                x=249, y=547, width=160, height=70
+                x=249, y=553, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='數學',
+            text='中國',
             area=ImagemapArea(
-                x=247, y=449, width=160, height=70
+                x=247, y=457, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='德文',
+            text='台灣',
             area=ImagemapArea(
                 x=246, y=252, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='日文',
+            text='在地',
             area=ImagemapArea(
                 x=246, y=154, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='音樂',
+            text='幸福',
             area=ImagemapArea(
                 x=248, y=54, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='微生物',
+            text='社會',
             area=ImagemapArea(
                 x=441, y=149, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='心理',
+            text='非營利組織',
             area=ImagemapArea(
                 x=440, y=252, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='法律',
+            text='公共治理',
             area=ImagemapArea(
                 x=439, y=352, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='經濟',
+            text='社工',
             area=ImagemapArea(
                 x=445, y=449, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='會計',
+             text='高齡',
             area=ImagemapArea(
                 x=438, y=541, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='企管',
+            text='健康生活',
             area=ImagemapArea(
                 x=628, y=59, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='經營',
+            text='美學',
             area=ImagemapArea(
                 x=832, y=47, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='管理',
+            text='音樂',
             area=ImagemapArea(
                 x=639, y=540, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='資科',
+             text='推理',
             area=ImagemapArea(
                 x=641, y=459, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='資管',
+             text='哲學',
             area=ImagemapArea(
                 x=635, y=351, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='財精',
+            text='外交領事',
             area=ImagemapArea(
                 x=634, y=251, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='國貿',
+            text='法律',
             area=ImagemapArea(
                 x=635, y=148, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='創意/創作',
+            text='英文',
             area=ImagemapArea(
                 x=831, y=152, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='人文',
+            text='韓文',
             area=ImagemapArea(
                 x=834, y=258, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='非營利組織',
+            text='日文',
             area=ImagemapArea(
                 x=833, y=357, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='東亞',
+            text='德文',
             area=ImagemapArea(
                 x=837, y=453, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-            text='全英語',
+            text='翻譯',
             area=ImagemapArea(
                 x=840, y=546, width=160, height=70
                 )
             ),
          MessageImagemapAction(
-             text='化學',
+             text='政治',
             area=ImagemapArea(
                 x=442, y=48, width=160, height=70
             )
@@ -654,84 +654,84 @@ def 小圖(event):
          ],
         ),
             ImagemapSendMessage(
-            base_url= "https://imgur.com/cgOUHGo.png",
+            base_url= "https://imgur.com/D87WWaX.png",
             alt_text='關鍵詞表2',
       base_size=BaseSize(width=1040, height=650),
       actions=[
         MessageImagemapAction(
-            text='財經',
+            text='全英語',
             area=ImagemapArea(
                 x=43, y=51, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='科技',
+            text='心理',
             area=ImagemapArea(
                 x=45, y=164, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='中國',
+             text='行為',
             area=ImagemapArea(
                 x=48, y=261, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='幸福',
+            text='微生物',
             area=ImagemapArea(
                 x=48, y=361, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='在地',
+            text='化學',
             area=ImagemapArea(
                 x=47, y=453, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='創新',
+            text='物理',
             area=ImagemapArea(
                 x=49, y=555, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='永續',
+            text='科技',
             area=ImagemapArea(
                 x=245, y=559, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='影視',
+            text='資科',
             area=ImagemapArea(
                 x=239, y=459, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='台灣',
+            text='分析',
             area=ImagemapArea(
                 x=235, y=353, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='人權',
+            text='線性代數',
             area=ImagemapArea(
                 x=244, y=252, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='經典',
+            text='數學',
             area=ImagemapArea(
                 x=244, y=159, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='美學',
+            text='創新',
             area=ImagemapArea(
                 x=246, y=52, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='推理',
+            text='資管',
             area=ImagemapArea(
                 x=443, y=52, width=160, height=70
                 )
@@ -749,91 +749,91 @@ def 小圖(event):
                 )
             ),
         MessageImagemapAction(
-            text='分析',
+            text='管理',
             area=ImagemapArea(
                 x=439, y=348, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='公共治理',
+             text='企管',
             area=ImagemapArea(
                 x=445, y=449, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='韓文',
+            text='永續',
             area=ImagemapArea(
                 x=435, y=545, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='高齡',
+            text='財精',
             area=ImagemapArea(
                 x=635, y=545, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行為',
+            text='經濟',
             area=ImagemapArea(
                 x=633, y=459, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='健康生活',
+             text='影視',
             area=ImagemapArea(
                 x=635, y=345, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='線性代數',
+             text='行銷',
             area=ImagemapArea(
                 x=630, y=252, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='翻譯',
+            text='經營',
             area=ImagemapArea(
                 x=633, y=151, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='文化',
+             text='國貿',
             area=ImagemapArea(
                 x=626, y=54, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='外交領事',
+             text='理財',
             area=ImagemapArea(
                 x=833, y=54, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行政',
+            text='財經',
             area=ImagemapArea(
                 x=839, y=153, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='商務',
+            text='會計',
             area=ImagemapArea(
                 x=833, y=256, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='地政/地產',
+            text='商務',
             area=ImagemapArea(
                 x=830, y=356, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-            text='行銷',
+            text='行政',
             area=ImagemapArea(
                 x=834, y=451, width=160, height=70
                 )
             ),
         MessageImagemapAction(
-             text='理財',
+             text='地政/地產',
             area=ImagemapArea(
                 x=834, y=548, width=160, height=70
                      )
@@ -886,7 +886,7 @@ def 輸學號(event):
         text = '這樣啊！希望這個推薦對你有幫助...'
         ), 
         TextSendMessage(  
-        text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的「職涯測驗果實」和「跨域紅蘿蔔」配在一起享用，迸出同時符合發展目標和興趣的跨域簡餐，讓我們一起來試試吧！'
+        text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的「職涯測驗果實」和「跨域紅蘿蔔」配在一起享用，迸出同時符合測驗結果和紅蘿蔔的跨域簡餐，讓我們一起來試試吧！'
         ), 
         TextSendMessage(  
         text = "為了找到你入學時做過的職涯興趣測驗結果，請輸入你的學號～"
@@ -1304,6 +1304,9 @@ def 錯誤訊息(event):
 def 聯絡人資訊(event):  
     try:
         message = [  #串列
+            TextSendMessage(  
+            text = "請點選你要查詢的跨領域學習承辦單位～"
+            ),        
             ImagemapSendMessage(
             base_url= "https://imgur.com/SCqhhaM.png",
             alt_text='雙輔系聯絡人',
