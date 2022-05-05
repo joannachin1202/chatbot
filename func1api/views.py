@@ -238,7 +238,7 @@ def callback(request):
                                 TemplateSendMessage(
                                 alt_text='重玩一次？',
                                 template=ConfirmTemplate(
-                                text='跨域森林很大，總共蘊含了六十個不同品種的紅蘿蔔，要不要讓我們再探索不同品種的紅蘿蔔呢？',  #主標題
+                                text='跨域森林很大，總共蘊含了六十個不同口味的紅蘿蔔，要不要讓我們再探索不同口味的紅蘿蔔呢？',  #主標題
                                 actions=[    
                                 MessageTemplateAction(  
                                 label='先不用', #按鈕文字
