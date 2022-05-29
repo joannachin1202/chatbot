@@ -28,7 +28,7 @@ def begin(event):  #多項傳送
             TextSendMessage(  
             text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
-           TemplateSendMessage(
+            TemplateSendMessage(
             alt_text='準備好一起探索這座森林了嗎？',
             template=ConfirmTemplate(
                 text='準備好一起探索這座森林了嗎？',  #主標題
@@ -936,21 +936,21 @@ def subject(array):
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
     text_1="🌳雙輔系灌木叢："
-    text_2="🛕跨域學程洞穴： "
+    text_2="🛕跨域學程洞穴："
     text_3="🏞第二專長小溪："
 
     for i in range(len(derpar)):
         if i==0:
             text_1+=derpar[i]
         else:
-            text_1 = text_1+" ,"+derpar[i]
+            text_1 = text_1+"，"+derpar[i]
             
     if len(cross_f) >= 1:
         for i in range(len(cross_f)):
             if i==0:
                 text_2+=cross_f[i]
             else:
-                text_2 = text_2+" ,"+cross_f[i]
+                text_2 = text_2+"，"+cross_f[i]
 
     else:
         pass
@@ -959,12 +959,12 @@ def subject(array):
             if i==0:
                 text_3+=second_spe[i]
             else:
-                text_3 = text_3+" ,"+second_spe[i]
+                text_3 = text_3+"，"+second_spe[i]
 
     else:
         pass
     
-    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！\n（以下隨機排序）'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
+    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！\n ⚠️（以下隨機排序）⚠️'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
     
@@ -1215,7 +1215,7 @@ def return_course(holland_code):
           dou_maj = dou_maj + key + ', '
       if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
-  return '但是根據你的果實，我可以為你推薦以下幾個擁有豐富營養素的地方：\n（以下隨機排序）'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
+  return '但是單獨根據你的測驗結果，我可以為你推薦以下幾個擁有豐富營養素的地方：\n ⚠️（以下隨機排序）⚠️'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
@@ -1267,7 +1267,7 @@ def get_connection(subject_ans,holand_ans):
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
     
     if (aux.split('：')[1] != '') or (sec.split('：')[1] != '') or (cro.split('：')[1] != ''):
-        return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n（以下隨機排序）\n' + '\n'+ aux + '\n' + cro + '\n' + sec
+        return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n ⚠️（以下隨機排序）⚠️\n' + '\n'+ aux + '\n' + cro + '\n' + sec
     else:
         return ''
 
@@ -1459,7 +1459,7 @@ def 聯絡人資訊(event):
          ],
         ),    
          ImagemapSendMessage(
-        base_url= "https://imgur.com/pFsJhb8.png",
+        base_url= "https://imgur.com/rbWAsxd.png",
         alt_text='學程＆第二專長聯絡人',
         base_size=BaseSize(width=1040, height=650),
       
@@ -1489,13 +1489,13 @@ def 聯絡人資訊(event):
                 )
             ),
         MessageImagemapAction(
-            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            text='聯絡人：   \nE-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
             area=ImagemapArea(
                 x=702, y=112, width=140, height=90
                 )
             ),
         MessageImagemapAction(
-            text='E-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
+            text='聯絡人：   \nE-mail ：ft@scu.edu.tw\n電話：02-2311 1531＃2891\n傳真電話：02-2311 6673\n辦公室：城中校區 鑄秋大樓一樓 2107室\n上班時間：星期一至五 上午8:00~12:00 下午1:00~5:00\nhttp://www.scu.edu.tw/ft',
             area=ImagemapArea(
                 x=871, y=104, width=140, height=90
                 )
