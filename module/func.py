@@ -28,7 +28,7 @@ def begin(event):  #多項傳送
             TextSendMessage(  
             text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
-            TemplateSendMessage(
+           TemplateSendMessage(
             alt_text='準備好一起探索這座森林了嗎？',
             template=ConfirmTemplate(
                 text='準備好一起探索這座森林了嗎？',  #主標題
@@ -897,8 +897,7 @@ def 輸學號(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
         
-def subject(array):
-    data = pd.read_excel(BASE_DIR / 'Keywords.xlsx',sheet_name="關鍵詞表(推薦)")
+def subject(data,array):
     keyword, deparment, cross_field, second_specialty=data["關鍵字"].tolist(), data["科系"].tolist(), data["跨領域"].tolist(), data["第二專長"].tolist()
     
     data_dict={}
