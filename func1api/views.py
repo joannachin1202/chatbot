@@ -19,6 +19,7 @@ from module import func
 from linebot.models import PostbackEvent
 from urllib.parse import parse_qsl
 import time
+import pandas as pd
 
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
@@ -33,6 +34,9 @@ main_word =['中文','歷史','哲學','政治','社會','社工','音樂','英�
 ,'翻譯','線性代數','健康生活','行為','高齡','外交領事','行政','商務','地政/地產','行銷','理財']
 
 student_id=list(func.arrange_data(BASE_DIR /'number1.csv'))
+rows = func.arrange_data(BASE_DIR /'number1.csv') 
+data = pd.read_excel(BASE_DIR / 'Keywords.xlsx',sheet_name="關鍵詞表(推薦)")
+
 @csrf_exempt
 def callback(request):
     global check
@@ -238,7 +242,7 @@ def callback(request):
                         
                             
                         if user_id in tem.keys() and len(tem[user_id])==3:
-                            content=func.subject(tem[user_id])
+                            content=func.subject(data,tem[user_id])
                             #关闭
                             check[user_id]-=1
                             #清除
@@ -305,8 +309,7 @@ def callback(request):
                            check[user_id] +=1
                     
                     elif mtext == '交集':
-                        subject_ans = func.subject(tem[user_id])
-                        rows = func.arrange_data(BASE_DIR /'number1.csv') 
+                        subject_ans = func.subject(data,tem[user_id])
                         
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         output=func.get_connection(subject_ans,holand_ans)
@@ -314,11 +317,9 @@ def callback(request):
     
                 
                     elif mtext in student_id:
-                        rows = func.arrange_data(BASE_DIR /'number1.csv')
                         stu_id_intersection = mtext
-                        holand=func.return_course(func.get_quiz_results(mtext,rows))
-                        
-                        subject_ans = func.subject(tem[user_id])
+
+                        subject_ans = func.subject(data,tem[user_id])
                         holand_ans = func.return_course(func.get_quiz_results(stu_id_intersection,rows))
                         output=func.get_connection(subject_ans,holand_ans)
                         
