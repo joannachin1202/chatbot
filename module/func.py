@@ -2,7 +2,7 @@ from django.conf import settings
 
 from linebot import LineBotApi
 
-from linebot.models import TextSendMessage
+from linebot.models import TextSendMessage,ImageSendMessage
 from pathlib import Path
 
 from linebot.models import TemplateSendMessage, MessageTemplateAction, ButtonsTemplate,ConfirmTemplate, PostbackTemplateAction,PostbackAction
@@ -26,9 +26,17 @@ def begin(event):  #多項傳送
             text = "叮咚叮！答對了\n歡迎進入森林～"
             ), 
             TextSendMessage(  
-            text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程洞穴和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
+            text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程草原和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
-           TemplateSendMessage(
+            ImageSendMessage(
+            original_content_Url='https://imgur.com/VD1uuvm.png',
+            preview_image_url='https://imgur.com/VD1uuvm.png'
+            ),
+            ImageSendMessage(
+            original_content_Url='https://imgur.com/nHVect4.png',
+            preview_image_url='https://imgur.com/nHVect4.png'
+            ),
+            TemplateSendMessage(
             alt_text='準備好一起探索這座森林了嗎？',
             template=ConfirmTemplate(
                 text='準備好一起探索這座森林了嗎？',  #主標題
@@ -57,7 +65,7 @@ def 先不用(event):
         text='(T▽T) 有甚麼問題想問我嗎～還是你目前不想要尋找蘿蔔坑呢？歡迎你透過以下連結到表單內留言給小圖哦！\n https://forms.gle/P6d5bkAzjy31tLSp8'
         ),
         TextSendMessage(  
-        text = "當你準備好探索森林時，歡迎你隨時呼喊我的名字「小圖」,回來找我一起玩喔~"
+        text = "當你準備好探索森林時，歡迎隨時呼喊我的名字「小圖」，回來找我一起玩喔~"
         )
     ]
         line_bot_api.reply_message(event.reply_token,message)
@@ -73,10 +81,7 @@ def 提供關鍵詞(event):
             text = "٩(●ᴗ●)۶ 好的，那麼我們進入森林吧～"
              ),
             TextSendMessage(  
-            text = "如果你在探索過程中走失了，不知道該怎麼做的話，只要打字呼喚我的名字「小圖」,我會馬上把你帶回森林入口哦！"
-             ),
-            TextSendMessage(  
-            text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
+            text = "我蒐集了許多跨域紅蘿蔔，快來選出三個符合你想發展的領域或有興趣的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑吧～"
              ),
             ImagemapSendMessage(
             base_url= "https://imgur.com/pqVJAli.png",
@@ -463,7 +468,7 @@ def 小圖(event):
     try:
         message = [  #串列
             TextSendMessage(  
-            text = "請你從下方兩個籃子中點選三個符合你興趣／發展領域的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑喔～"
+            text = "我蒐集了許多跨域紅蘿蔔，快來選出三個符合你想發展的領域或有興趣的跨領域紅蘿蔔，讓我為你推薦蘿蔔坑吧～"
              ),
              ImagemapSendMessage(
             base_url= "https://imgur.com/pqVJAli.png",
@@ -859,8 +864,8 @@ def 關鍵字結果(event):
             text='雙修輔系灌木叢' #顯示文字計息  
             ),
             MessageTemplateAction(  #顯示文字計息
-            label='跨域學程洞穴',
-            text='跨域學程洞穴'
+            label='跨域學程草原',
+            text='跨域學程草原'
             ),
             MessageTemplateAction(  #顯示文字計息
             label='第二專長小溪',
@@ -886,10 +891,10 @@ def 輸學號(event):
         text = '這樣啊！希望這個推薦對你有幫助...'
         ), 
         TextSendMessage(  
-        text = '快看！前面就是校務資料中心大榕樹了，我經常把樹洞裡的「職涯測驗果實」和「跨域紅蘿蔔」配在一起享用，迸出同時符合測驗結果和紅蘿蔔的跨域簡餐，讓我們一起來試試吧！'
+        text = '快看！前面就是校務資料中心大榕樹了，「職涯測驗地圖」就在裡面，它可以帶領我們找到職涯測驗結果和紅蘿蔔的跨域交集，讓我們一起來試試吧！'
         ), 
         TextSendMessage(  
-        text = "為了找到你入學時做過的職涯興趣測驗結果，請輸入你的學號～"
+        text = "為了解鎖你入學時做過的職涯興趣測驗結果，請輸入你的學號～"
         )
     ]
         line_bot_api.reply_message(event.reply_token,message)
@@ -935,7 +940,7 @@ def subject(data,array):
     derpar, cross_f, second_spe = list(set(derpar)), list(set(cross_f)), list(set(second_spe))
     
     text_1="🌳雙輔系灌木叢："
-    text_2="🛕跨域學程洞穴："
+    text_2="🏕跨域學程草原："
     text_3="🏞第二專長小溪："
 
     for i in range(len(derpar)):
@@ -963,7 +968,7 @@ def subject(data,array):
     else:
         pass
     
-    text = '有了！富含你選的3個蘿蔔坑在跨域森林的下面幾個地方可以找到！\n ⚠️（以下隨機排序）⚠️'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
+    text = '有了！原來適合你的蘿蔔坑在這裡啊！\n ⚠️（以下隨機排序）⚠️'+"\n"+"\n"+ text_1 +"\n"+ text_2 +"\n"+text_3
     
     return text
     
@@ -1011,7 +1016,7 @@ sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland(BASE_DIR 
 
 def return_course(holland_code):
   sec_spec = '🏞第二專長小溪：'
-  cro_dom = '🛕跨域學程洞穴：'
+  cro_dom = '🏕跨域學程草原：'
   aux_dep = '輔系：'
   dou_maj = '🌳雙輔系灌木叢：'
 
@@ -1214,7 +1219,7 @@ def return_course(holland_code):
           dou_maj = dou_maj + key + ', '
       if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
-  return '但是單獨根據你的測驗結果，我可以為你推薦以下幾個擁有豐富營養素的地方：\n ⚠️（以下隨機排序）⚠️'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
+  return '謝謝！找到你的測驗地圖了~\n不過地圖涵蓋的蘿蔔坑與你所選的跨域紅蘿蔔沒有交集耶...\n但是單獨根據你的測驗結果，我還是可以為你推薦以下幾個職涯地圖上出現的蘿蔔坑：\n⚠️（以下隨機排序）⚠️'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
 
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
@@ -1237,7 +1242,7 @@ def get_connection(subject_ans,holand_ans):
       elif '第二專長小溪' in item:
         for i in item[7:].split(','):
           sec_spec.append(i)
-      elif '跨域學程洞穴' in item:
+      elif '跨域學程草原' in item:
         for i in item[7:].split(','):
           cro_dom.append(i)
     for item in pre_holand_ans:
@@ -1247,7 +1252,7 @@ def get_connection(subject_ans,holand_ans):
       elif '第二專長小溪' in item:
         for i in item[7:].split(','):
           sec_spec.append(i)
-      elif '跨域學程洞穴' in item:
+      elif '跨域學程草原' in item:
         for i in item[7:].split(','):
           cro_dom.append(i)
 
@@ -1257,7 +1262,7 @@ def get_connection(subject_ans,holand_ans):
  
     aux = '🌳雙輔系灌木叢：'
     sec = '🏞第二專長小溪：'
-    cro = '🛕跨域學程洞穴：'
+    cro = '🏕跨域學程草原：'
     if list(unique_everseen(duplicates(aux_dep))) != []:
       aux += list(unique_everseen(duplicates(aux_dep)))[0]
     if list(unique_everseen(duplicates(sec_spec))) != []:
@@ -1266,7 +1271,7 @@ def get_connection(subject_ans,holand_ans):
       cro += list(unique_everseen(duplicates(cro_dom)))[0]
     
     if (aux.split('：')[1] != '') or (sec.split('：')[1] != '') or (cro.split('：')[1] != ''):
-        return '有了！把跨域紅蘿蔔烹飪後用果實調味點綴...\nDo Re Mi So～\n跨域簡餐出爐囉，請至以下地點領取：\n ⚠️（以下隨機排序）⚠️\n' + '\n'+ aux + '\n' + cro + '\n' + sec
+        return '有了！跟著地圖的軌跡走...\nDo Re Mi So～\n跨域交集出爐囉，蘿蔔坑在這裡：\n⚠️（以下隨機排序）⚠️\n' + '\n'+ aux + '\n' + cro + '\n' + sec
     else:
         return ''
 
@@ -1458,7 +1463,7 @@ def 聯絡人資訊(event):
          ],
         ),    
          ImagemapSendMessage(
-        base_url= "https://imgur.com/rbWAsxd.png",
+        base_url= "https://imgur.com/jIeei8k.png",
         alt_text='學程＆第二專長聯絡人',
         base_size=BaseSize(width=1040, height=650),
       
@@ -1844,7 +1849,7 @@ def 聯絡人資訊(event):
 def 應修課程(event): 
     try:
         message=TextSendMessage(
-        text='◆查看「雙修輔系灌木」和「跨領域洞穴」應修課程：\n http://www.scu.edu.tw/~curr/p3-2cos.htm\n◇查看「第二專長小溪」應修課程:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
+        text='◆查看「雙修輔系灌木」和「跨領域草原」應修課程：\n http://www.scu.edu.tw/~curr/p3-2cos.htm\n◇查看「第二專長小溪」應修課程:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
         )
         
         line_bot_api.reply_message(event.reply_token,message)
@@ -1854,7 +1859,7 @@ def 應修課程(event):
 def 申請條件(event): 
     try:
         message=TextSendMessage(
-        text='◆查看「雙修輔系灌木」和「跨領域洞穴」申請條件：\n   https://api.sys.scu.edu.tw/academic/\n◇查看「第二專長小溪」申請條件:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
+        text='◆查看「雙修輔系灌木」和「跨領域草原」申請條件：\n   https://api.sys.scu.edu.tw/academic/\n◇查看「第二專長小溪」申請條件:\n   https://web-ch.scu.edu.tw/regcurr/file/10477'
         )
         
         line_bot_api.reply_message(event.reply_token,message)
@@ -1864,7 +1869,7 @@ def 申請條件(event):
 def 本學期開課(event): 
     try:
         message=TextSendMessage(
-        text='◆查看「雙修輔系灌木」和「跨領域洞穴」本學期開課：\n   https://web.sys.scu.edu.tw/class40.asp?option=1\n◇查看「第二專長小溪」本學期開課: \n   https://course.sys.scu.edu.tw/currlist/SecExpQueryCls.aspx'
+        text='◆查看「雙修輔系灌木」和「跨領域草原」本學期開課：\n   https://web.sys.scu.edu.tw/class40.asp?option=1\n◇查看「第二專長小溪」本學期開課: \n   https://course.sys.scu.edu.tw/currlist/SecExpQueryCls.aspx'
         )
         
         line_bot_api.reply_message(event.reply_token,message)
