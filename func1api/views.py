@@ -82,7 +82,7 @@ def callback(request):
                          func.本學期開課(event)
             
                     
-                    elif mtext == '好呀！' or mtext == '小圖':
+                    elif mtext == '小圖':
                          func.小圖(event)
                          
                          if user_id not in check.keys():
@@ -94,18 +94,7 @@ def callback(request):
                         
                         
                     
-                    elif mtext == '先不用':
-                        message = [  #串列
-                                 
-                                 TextSendMessage( 
-                                 text = '小圖的夢想是成為一名優秀的跨域森林嚮導，希望由小圖帶領過的你，能透過連結填寫表單，給予小圖鼓勵並幫助小圖成長！\n https://forms.gle/P6d5bkAzjy31tLSp8 '
-                                 ),
-                                 TextSendMessage( 
-                                 text = '隨時歡迎你打字呼叫我的名字「小圖」,回來再選一次紅蘿蔔，一起探索森林更多樣貌喔～'
-                                 )
-                                ]
-                        
-                        line_bot_api.reply_message(event.reply_token,message)
+                    
                        
                     
                     elif mtext == '我在「通關密語」':
@@ -115,10 +104,10 @@ def callback(request):
                         del tem[user_id]
                         message = [  #串列
                                  TextSendMessage(  
-                                 text = '感謝你！\n但很抱歉，樹洞裡沒有你的測驗果實，可能因為你沒有做過測驗，因此無法製作跨域簡餐 (⋟_⋞)'
+                                 text = '感謝你！\n但很抱歉，樹洞裡沒有你的測驗結果，可能因為你沒有做過測驗，因此無法找到跨域交集的蘿蔔坑 (⋟_⋞)'
                                  ),
                                  TextSendMessage( 
-                                 text = '希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友,若你想更加了解跨域森林或各個蘿蔔坑,可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
+                                 text = '希望這些推薦能幫你找到適合你的跨域蘿蔔坑！\n\n如果你想更加了解跨域森林或各個蘿蔔坑，可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
                                  ),
                                  ImagemapSendMessage(
                                  base_url= "https://imgur.com/Qj0jpdi.png",
@@ -204,25 +193,14 @@ def callback(request):
                                  TextSendMessage(  
                                  text =' 謝謝你的回覆，小圖會繼續努力的！'
                                  ),
-                                 TemplateSendMessage(
-                                 alt_text='重玩一次？',
-                                 template=ConfirmTemplate(
-                                 text='跨域森林很大，總共蘊含了六十個不同品種的紅蘿蔔，要不要讓我們再探索不同品種的紅蘿蔔呢？',  #主標題
-                                 actions=[    
-                                 MessageTemplateAction(  
-                                 label='先不用', #按鈕文字
-                                 text='先不用' #顯示文字計息  
+                                 TextSendMessage( 
+                                 text = '小圖的夢想是成為一名優秀的跨域森林嚮導，希望由小圖帶領過的你，能透過連結填寫表單，給予小圖鼓勵並幫助小圖成長！\n https://forms.gle/P6d5bkAzjy31tLSp8 '
                                  ),
-                                 MessageTemplateAction(  #顯示文字計息
-                                 label='好呀！',
-                                 text='好呀！'
+                                 TextSendMessage( 
+                                 text = '謝謝你願意和我聊天當朋友！\n隨時歡迎你打字呼叫我的名字「小圖」，回來再選一次紅蘿蔔，一起探索森林更多樣貌喔～'
                                  )
                       
                                 ]
-                              )
-                            )
-         
-                          ]
            
                          line_bot_api.reply_message(event.reply_token,message)
                         
@@ -263,8 +241,8 @@ def callback(request):
                                   text='雙修輔系灌木叢' #顯示文字計息  
                                   ),
                                   MessageTemplateAction(  #顯示文字計息
-                                  label='跨域學程洞穴',
-                                  text='跨域學程洞穴'
+                                  label='跨域學程草原',
+                                  text='跨域學程草原'
                                   ),
                                   MessageTemplateAction(  #顯示文字計息
                                   label='第二專長小溪',
@@ -289,7 +267,7 @@ def callback(request):
             
                     elif mtext == '雙修輔系灌木叢':
                          func.輸學號(event)
-                    elif mtext == '跨域學程洞穴':
+                    elif mtext == '跨域學程草原':
                          func.輸學號(event)
                     elif mtext == '第二專長小溪':
                          func.輸學號(event)
@@ -327,14 +305,11 @@ def callback(request):
                            del tem[user_id] 
                            del check[user_id]
                            message = [  #串列
-                                 TextSendMessage(  
-                                 text = '但我試吃了一下你的跨域簡餐，發現這兩個味道相差太大了，實在不能配在一起享用，因此無法提供給你同時符合你挑選的紅蘿蔔和職涯測驗結果的推薦，很抱歉！'
-                                 ), 
                                  TextSendMessage( 
                                  text = holand_ans
                                  ),
                                  TextSendMessage( 
-                                 text = '希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友,若你想更加了解跨域森林或各個蘿蔔坑,可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
+                                 text = '希望這些推薦能幫你找到適合你的跨域蘿蔔坑！\n\n如果你想更加了解跨域森林或各個蘿蔔坑，可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
                                  ),
                                  ImagemapSendMessage(
                                  base_url= "https://imgur.com/Qj0jpdi.png",
@@ -425,14 +400,11 @@ def callback(request):
                             del check[user_id]
                             
                             message = [  #串列
-                                TextSendMessage(  
-                                text = '謝謝！找到你的測驗果實了～'
-                                ), 
                                 TextSendMessage( 
                                 text = output
                                 ),
                                 TextSendMessage( 
-                                 text = '希望這些推薦能幫你找到合胃口的跨領域紅蘿蔔！\n謝謝你願意和我聊天當朋友,若你想更加了解跨域森林或各個蘿蔔坑,可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
+                                 text = '希望這些推薦能幫你找到適合你的跨域蘿蔔坑！\n如果你想更加了解跨域森林或各個蘿蔔坑，可以在下方的選單找森林裡的其他朋友了解相關資訊喔！'
                                  ),
                                  ImagemapSendMessage(
                                  base_url= "https://imgur.com/Qj0jpdi.png",
