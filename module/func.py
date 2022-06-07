@@ -29,11 +29,11 @@ def begin(event):  #多項傳送
             text = "小圖是你的森林嚮導，我會盡全力地向你推薦雙修輔系灌木、跨域學程草原和第二專長小溪中，可能符合你發展目標或興趣的跨域蘿蔔坑！"
             ), 
             ImageSendMessage(
-            original_content_Url='https://imgur.com/VD1uuvm.png',
+            original_content_url='https://imgur.com/VD1uuvm.png',
             preview_image_url='https://imgur.com/VD1uuvm.png'
             ),
             ImageSendMessage(
-            original_content_Url='https://imgur.com/nHVect4.png',
+            original_content_url='https://imgur.com/nHVect4.png',
             preview_image_url='https://imgur.com/nHVect4.png'
             ),
             TemplateSendMessage(
