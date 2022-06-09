@@ -1026,6 +1026,11 @@ def return_course(holland_code):
   cro_dom = '🏕跨域學程草原：'
   aux_dep = '輔系：'
   dou_maj = '🌳雙輔系灌木叢：'
+ 
+  print(sec_spec_rows)
+  print(cro_dom_rows)
+  print(aux_dep_rows)
+  print(dou_maj_rows)
 
   if len(holland_code) == 5:
     # 第二專長
