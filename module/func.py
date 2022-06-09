@@ -1016,10 +1016,6 @@ def arrange_holland(file):
 
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland(BASE_DIR /'Holland .csv')
 
-print(sec_spec_rows)
-print(cro_dom_rows)
-print(aux_dep_rows)
-print(dou_maj_rows)
 
 def return_course(holland_code):
   sec_spec = '🏞第二專長小溪：'
