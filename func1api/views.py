@@ -61,6 +61,7 @@ def callback(request):
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
                     mtext = event.message.text
+                    print(mtext)
                     user_id = event.source.user_id
                     
                     
@@ -83,6 +84,7 @@ def callback(request):
             
                     
                     elif mtext == '小圖':
+                         print(mtext)
                          func.小圖(event)
                          
                          if user_id not in check.keys():
@@ -210,7 +212,8 @@ def callback(request):
                    #要看 tem 有多長用 len（）
                     # 當長度是三時我
                     elif user_id in check.keys() and check[user_id]==1:
-                            
+                        print(tem) 
+                        
                         if mtext not in main_word:
                             # 輸入文字不是科目 會被提醒
                             line_bot_api.reply_message(event.reply_token,TextSendMessage(text='請點選圖片中的紅蘿蔔喔！')) 
@@ -266,12 +269,16 @@ def callback(request):
                         
             
                     elif mtext == '雙修輔系灌木叢':
+                         print(mtext)
                          func.輸學號(event)
-                    elif mtext == '跨域學程草原':
+                    elif mtext == '跨域學程草原': 
+                         print(mtext)
                          func.輸學號(event)
                     elif mtext == '第二專長小溪':
+                         print(mtext)
                          func.輸學號(event)
                     elif mtext == '目前選不出來' :
+                         print(mtext)
                          func.輸學號(event)
                          
                     elif mtext == '先等等':
@@ -279,6 +286,7 @@ def callback(request):
                         
                     elif mtext == '出發囉':
                         func.提供關鍵詞(event)
+                        
                         if user_id not in check.keys():
                             check[user_id] = 0
                             check[user_id] += 1
