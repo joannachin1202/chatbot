@@ -1016,6 +1016,11 @@ def arrange_holland(file):
 
 sec_spec_rows,cro_dom_rows,aux_dep_rows,dou_maj_rows = arrange_holland(BASE_DIR /'Holland .csv')
 
+print(sec_spec_rows)
+print(cro_dom_rows)
+print(aux_dep_rows)
+print(dou_maj_rows)
+
 def return_course(holland_code):
   sec_spec = '🏞第二專長小溪：'
   cro_dom = '🏕跨域學程草原：'
@@ -1222,7 +1227,8 @@ def return_course(holland_code):
       if len(dou_maj) > 8:
         dou_maj = dou_maj[:-2]
   return '謝謝！找到你的測驗地圖了~\n不過地圖涵蓋的蘿蔔坑與你所選的跨域紅蘿蔔沒有交集耶...\n但是單獨根據你的測驗結果，我還是可以為你推薦以下幾個職涯地圖上出現的蘿蔔坑：\n⚠️（以下隨機排序）⚠️'+'\n'+'\n' +dou_maj + '\n' + cro_dom + '\n' + sec_spec
-
+  print(return_course(get_quiz_results("11111111")))
+    
 def get_connection(subject_ans,holand_ans):
     subject_ans = subject_ans.replace(' ','').replace('：',':')
     holand_ans = holand_ans.replace(' ','').replace('：',':')
