@@ -58,6 +58,8 @@ def begin(event):  #多項傳送
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
         
+        print mtext
+        
 def 先不用(event): 
     try:
         message = [
